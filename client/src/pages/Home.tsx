@@ -269,7 +269,7 @@ export default function Home() {
               <StatBox label="TEAM MEMBERS" value="4" sub="Grades 3 & 5" color="#FFB703" />
               <StatBox label="CANADA VR RANK" value="#2" sub="Robot Skills" color="#00C9B1" />
               <StatBox label="WORLD VR RANK" value="#55" color="#06D6A0" />
-              <StatBox label="INNOVATE AWARD" value="✓" sub="Nov 2, 2025" color="#06D6A0" />
+              <StatBox label="INNOVATE AWARD" value="2x" sub="Nov 2, 2025 & Feb 8, 2026" color="#06D6A0" />
               <div className="col-span-2 p-4 border" style={{ borderColor: "#4CC9F030", background: "#4CC9F008" }}>
                 <div className="label-mono text-xs mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>NEXT MILESTONE</div>
                 <div className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#4CC9F0" }}>
