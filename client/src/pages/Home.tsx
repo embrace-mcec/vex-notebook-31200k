@@ -49,7 +49,7 @@ const competitionData = [
   { event: "Caution Tape (Nov 2)", avg: 39.4, rank: 49, skills: 43 },
   { event: "Brampton (Nov 15)", avg: 88.2, rank: 20, skills: null },
   { event: "Brampton (Jan 17)", avg: 68.7, rank: 10, skills: null },
-  { event: "Caution Tape LNY (Feb 8)", avg: 75.0, rank: 15, skills: 60, award: "2nd Innovate" },
+  { event: "Caution Tape LNY (Feb 8)", avg: 99.2, rank: 15, skills: 60, award: "2nd Innovate" },
 ];
 
 const vrSkillsData = [
@@ -57,8 +57,7 @@ const vrSkillsData = [
   { month: "Oct", score: 35 },
   { month: "Nov", score: 43 },
   { month: "Dec", score: 55 },
-  { month: "Jan", score: 68 },
-  { month: "Feb", score: 82 },
+  { month: "Jan", score: 140 },
 ];
 
 const programTimeline = [
