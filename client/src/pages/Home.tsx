@@ -375,9 +375,92 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── DESIGN & BUILD ── */}
+      {/* ── GAME ANALYSIS ── */}
       <section
         ref={(el) => { sectionRefs.current[2] = el; }}
+        id="game"
+        className="min-h-screen py-24"
+        style={{ borderTop: "1px solid rgba(255,107,157,0.2)" }}
+      >
+        <div className="container max-w-6xl mx-auto px-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#FF6B9D" }} />
+            <SectionTag color="#FF6B9D">CHAPTER 02</SectionTag>
+          </div>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#FF6B9D" }}>VEX IQ Mix & Match</h2>
+          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
+            Understanding the game mechanics from the official VEX Robotics manual — Game-Specific Definitions section.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {gameElements.map((el) => (
+              <div key={el.title} className="p-6 border" style={{ borderColor: "rgba(255,107,157,0.25)", background: "rgba(255,107,157,0.05)", borderLeft: "4px solid #FF6B9D" }}>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-4xl">{el.icon}</div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">{el.title}</h3>
+                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>{el.desc}</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {el.details.map((detail) => (
+                    <div key={detail} className="flex items-center gap-2 text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
+                      <span style={{ color: "#FF6B9D" }}>▸</span> {detail}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Rules */}
+          <div className="p-6 border" style={{ borderColor: "rgba(255,107,157,0.25)", background: "rgba(255,107,157,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#FF6B9D" }}>KEY SCORING RULES (SC1-SC6)</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-bold mb-3">Scoring Basics</h4>
+                <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <li>✓ All scoring statuses evaluated <strong>after match ends</strong></li>
+                  <li>✓ Evaluated <strong>visually by Head Referee</strong></li>
+                  <li>✓ Scoring Objects can be <strong>Connected to form Stacks</strong></li>
+                  <li>✓ Multi-color Stacks receive <strong>additional bonus points</strong></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-3">Connected Stacks</h4>
+                <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <li>✓ Must be <strong>roughly vertical</strong> (goes 'up', not sideways)</li>
+                  <li>✓ Pins must be <strong>fully nested</strong> with other objects</li>
+                  <li>✓ Beams can connect to up to <strong>3 Pins simultaneously</strong></li>
+                  <li>✓ <strong>No robot contact</strong> with the Stack</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Strategic Insights */}
+          <div className="mt-8 p-6 border" style={{ borderColor: "rgba(255,107,157,0.2)", borderLeft: "4px solid #FF6B9D" }}>
+            <h4 className="font-bold mb-4" style={{ color: "#FF6B9D" }}>Strategic Insights for Team 31200K</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { icon: "🎯", title: "Multi-Color Strategy", desc: "Prioritize 3-color stacks for maximum bonus points" },
+                { icon: "⚖️", title: "Vertical Precision", desc: "Ensure stacks are perfectly vertical to avoid disqualification" },
+                { icon: "🤖", title: "Automation Advantage", desc: "Our sensor-driven claw automates stack placement for consistency" },
+              ].map((insight) => (
+                <div key={insight.title} className="p-4 border" style={{ borderColor: "rgba(255,107,157,0.15)", background: "rgba(255,107,157,0.03)" }}>
+                  <div className="text-2xl mb-2">{insight.icon}</div>
+                  <div className="font-semibold text-sm mb-1">{insight.title}</div>
+                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>{insight.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DESIGN & BUILD ── */}
+      <section
+        ref={(el) => { sectionRefs.current[3] = el; }}
         id="design"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(155,93,229,0.2)" }}
@@ -527,7 +610,7 @@ export default function Home() {
 
       {/* ── PROGRAMMING ── */}
       <section
-        ref={(el) => { sectionRefs.current[3] = el; }}
+        ref={(el) => { sectionRefs.current[4] = el; }}
         id="programming"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(6,214,160,0.2)" }}
@@ -613,88 +696,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── GAME ANALYSIS ── */}
-      <section
-        ref={(el) => { sectionRefs.current[4] = el; }}
-        id="game"
-        className="min-h-screen py-24"
-        style={{ borderTop: "1px solid rgba(255,107,157,0.2)" }}
-      >
-        <div className="container max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#FF6B9D" }} />
-            <SectionTag color="#FF6B9D">CHAPTER 02</SectionTag>
-          </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#FF6B9D" }}>VEX IQ Mix & Match</h2>
-          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            Understanding the game mechanics from the official VEX Robotics manual — Game-Specific Definitions section.
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {gameElements.map((el) => (
-              <div key={el.title} className="p-6 border" style={{ borderColor: "rgba(255,107,157,0.25)", background: "rgba(255,107,157,0.05)", borderLeft: "4px solid #FF6B9D" }}>
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="text-4xl">{el.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{el.title}</h3>
-                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>{el.desc}</p>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  {el.details.map((detail) => (
-                    <div key={detail} className="flex items-center gap-2 text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
-                      <span style={{ color: "#FF6B9D" }}>▸</span> {detail}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Key Rules */}
-          <div className="p-6 border" style={{ borderColor: "rgba(255,107,157,0.25)", background: "rgba(255,107,157,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#FF6B9D" }}>KEY SCORING RULES (SC1-SC6)</div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-bold mb-3">Scoring Basics</h4>
-                <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
-                  <li>✓ All scoring statuses evaluated <strong>after match ends</strong></li>
-                  <li>✓ Evaluated <strong>visually by Head Referee</strong></li>
-                  <li>✓ Scoring Objects can be <strong>Connected to form Stacks</strong></li>
-                  <li>✓ Multi-color Stacks receive <strong>additional bonus points</strong></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold mb-3">Connected Stacks</h4>
-                <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
-                  <li>✓ Must be <strong>roughly vertical</strong> (goes 'up', not sideways)</li>
-                  <li>✓ Pins must be <strong>fully nested</strong> with other objects</li>
-                  <li>✓ Beams can connect to up to <strong>3 Pins simultaneously</strong></li>
-                  <li>✓ <strong>No robot contact</strong> with the Stack</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Strategic Insights */}
-          <div className="mt-8 p-6 border" style={{ borderColor: "rgba(255,107,157,0.2)", borderLeft: "4px solid #FF6B9D" }}>
-            <h4 className="font-bold mb-4" style={{ color: "#FF6B9D" }}>Strategic Insights for Team 31200K</h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[
-                { icon: "🎯", title: "Multi-Color Strategy", desc: "Prioritize 3-color stacks for maximum bonus points" },
-                { icon: "⚖️", title: "Vertical Precision", desc: "Ensure stacks are perfectly vertical to avoid disqualification" },
-                { icon: "🤖", title: "Automation Advantage", desc: "Our sensor-driven claw automates stack placement for consistency" },
-              ].map((insight) => (
-                <div key={insight.title} className="p-4 border" style={{ borderColor: "rgba(255,107,157,0.15)", background: "rgba(255,107,157,0.03)" }}>
-                  <div className="text-2xl mb-2">{insight.icon}</div>
-                  <div className="font-semibold text-sm mb-1">{insight.title}</div>
-                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>{insight.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── COMPETITION ── */}
       <section
