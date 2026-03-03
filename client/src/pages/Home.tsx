@@ -164,9 +164,9 @@ export default function Home() {
   const sections = [
     { id: "hero", label: "Overview", color: "#FFB703" },
     { id: "team", label: "Team", color: "#FFB703" },
+    { id: "game", label: "Game", color: "#FF6B9D" },
     { id: "design", label: "Design", color: "#9B5DE5" },
     { id: "programming", label: "Code", color: "#06D6A0" },
-    { id: "game", label: "Game", color: "#FF6B9D" },
     { id: "competition", label: "Competition", color: "#FB8500" },
     { id: "season", label: "Season", color: "#4CC9F0" },
   ];
@@ -385,7 +385,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#9B5DE5" }} />
-            <SectionTag color="#9B5DE5">CHAPTER 02</SectionTag>
+            <SectionTag color="#9B5DE5">CHAPTER 03</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Design & Build</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -535,7 +535,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#06D6A0" }} />
-            <SectionTag color="#06D6A0">CHAPTER 03</SectionTag>
+            <SectionTag color="#06D6A0">CHAPTER 04</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#06D6A0" }}>Programming Journey</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -623,7 +623,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#FF6B9D" }} />
-            <SectionTag color="#FF6B9D">GAME ANALYSIS</SectionTag>
+            <SectionTag color="#FF6B9D">CHAPTER 02</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#FF6B9D" }}>VEX IQ Mix & Match</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -706,7 +706,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#FB8500" }} />
-            <SectionTag color="#FB8500">CHAPTER 04</SectionTag>
+            <SectionTag color="#FB8500">CHAPTER 05</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#FB8500" }}>Competition Results</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -793,7 +793,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">CHAPTER 05</SectionTag>
+            <SectionTag color="#4CC9F0">CHAPTER 06</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Full Season Journey</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
