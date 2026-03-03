@@ -718,7 +718,8 @@ export default function Home() {
           {/* Innovate Award Highlight */}
           <div className="mb-10 p-8 border-2 relative overflow-hidden" style={{ borderColor: "#FB8500", background: "linear-gradient(135deg, rgba(251,133,0,0.1), rgba(13,27,42,0.8))" }}>
             <div className="absolute top-4 right-6 text-6xl opacity-20">🏆</div>
-            <div className="label-mono text-xs mb-2" style={{ color: "#FB8500" }}>NOV 2, 2025 — CAUTION TAPE HALLOWEEN QUALIFIER</div>
+            <div className="label-mono text-xs mb-2" style={{ color: "#FB8500" }}>NOV 2, 2025 — CAUTION TAPE HALLOWEEN QUALIFIER
+FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
             <div className="text-4xl font-extrabold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>INNOVATE AWARD</div>
             <p className="text-base" style={{ color: "rgba(255,255,255,0.7)", maxWidth: 600 }}>
               Recognized for our <strong>sensor-driven automation system</strong> that uses a distance sensor to automatically control the claw arm — eliminating manual button presses and reducing driver cognitive load.
