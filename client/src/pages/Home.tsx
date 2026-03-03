@@ -768,10 +768,10 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
           {/* Detailed Competition Events */}
           <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { date: "Nov 2", name: "Caution Tape Halloween Qualifier", avg: 39.4, skills: 43, award: "Innovate Award" },
+              { date: "Nov 2", name: "Caution Tape Halloween Qualifier", avg: 39.4, skills: 2, award: "Innovate Award" },
               { date: "Nov 15", name: "Brampton Mix & Match", avg: 88.2, note: "Supporting 31200A" },
               { date: "Jan 17", name: "Brampton Mix & Match", avg: 68.7, note: "Supporting 31200A" },
-              { date: "Feb 8", name: "Caution Tape Lunar New Year Qualifier", avg: 75.0, skills: 60, award: "2nd Innovate Award" },
+              { date: "Feb 8", name: "Caution Tape Lunar New Year Qualifier", avg: 99.2, skills: 60, award: "Innovate Award" },
             ].map((event) => (
               <div key={event.date} className="p-5 border" style={{ borderColor: "rgba(251,133,0,0.25)", background: "rgba(251,133,0,0.05)" }}>
                 <div className="label-mono text-xs mb-2" style={{ color: "#FB8500" }}>{event.date}</div>
