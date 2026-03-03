@@ -49,7 +49,7 @@ const competitionData = [
   { event: "Caution Tape (Nov 2)", avg: 39.4, rank: 49, skills: 43 },
   { event: "Brampton (Nov 15)", avg: 88.2, rank: 20, skills: null },
   { event: "Brampton (Jan 17)", avg: 68.7, rank: 10, skills: null },
-  { event: "Lunar NY (Feb 8)", avg: 75.0, rank: 15, skills: null },
+  { event: "Caution Tape LNY (Feb 8)", avg: 75.0, rank: 15, skills: 60 },
 ];
 
 const vrSkillsData = [
@@ -75,8 +75,8 @@ const seasonEvents = [
   { date: "Nov 2", label: "Caution Tape Qualifier\n(Innovate Award 🏆)", color: "#FB8500", type: "milestone" },
   { date: "Nov 15", label: "Brampton Mix & Match", color: "#FB8500", type: "milestone" },
   { date: "Jan 17", label: "Brampton Mix & Match", color: "#FB8500", type: "milestone" },
-  { date: "Feb 8", label: "Lunar New Year Qualifier", color: "#FB8500", type: "milestone" },
-  { date: "Mar 2026", label: "Ontario Provincials 🎯", color: "#4CC9F0", type: "milestone" },
+  { date: "Feb 8", label: "Caution Tape LNY Qualifier\n(2nd Innovate Award 🏆)", color: "#FB8500", type: "milestone" },
+  { date: "Mar 7-8", label: "Ontario Provincials 🎯", color: "#4CC9F0", type: "milestone" },
   { date: "May 2026", label: "World Championship 🌍", color: "#06D6A0", type: "goal" },
 ];
 
@@ -229,12 +229,11 @@ export default function Home() {
               </h1>
 
               <p className="text-lg mb-8" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
-                VEX IQ Rapid Relay Season 2025–2026 Engineering Notebook.
-                Four elementary school students from Ontario, Canada — building, coding, and competing at the highest level.
+                VEX IQ Mix & Match Season 2025–2026 Engineering Notebook. Four elementary school students from Ontario, Canada — building, coding, and competing at the highest level.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
-                {["Ontario Provincial Championship", "Innovate Award Winner", "Canada #1 VR Skills"].map((badge) => (
+                {["Ontario Provincial Championship", "2x Innovate Award Winner", "Canada #2 VR Skills"].map((badge) => (
                   <span key={badge} className="label-mono text-xs px-3 py-2 border" style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.6)" }}>
                     {badge}
                   </span>
@@ -268,8 +267,8 @@ export default function Home() {
             {/* Right: Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
               <StatBox label="TEAM MEMBERS" value="4" sub="Grades 3 & 5" color="#FFB703" />
-              <StatBox label="CANADA VR RANK" value="#1" sub="Robot Skills" color="#00C9B1" />
-              <StatBox label="WORLD VR RANK" value="#42" sub="Robot Skills" color="#9B5DE5" />
+              <StatBox label="CANADA VR RANK" value="#2" sub="Robot Skills" color="#00C9B1" />
+              <StatBox label="WORLD VR RANK" value="#55" color="#06D6A0" />
               <StatBox label="INNOVATE AWARD" value="✓" sub="Nov 2, 2025" color="#06D6A0" />
               <div className="col-span-2 p-4 border" style={{ borderColor: "#4CC9F030", background: "#4CC9F008" }}>
                 <div className="label-mono text-xs mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>NEXT MILESTONE</div>
@@ -688,8 +687,8 @@ export default function Home() {
                   <div className="font-bold text-sm text-center">Ray Lin</div>
                   <div className="label-mono text-xs" style={{ color: "#06D6A0" }}>PROGRAMMER</div>
                 </div>
-                <StatBox label="CANADA RANK" value="#1" color="#06D6A0" />
-                <StatBox label="WORLD RANK" value="#42" color="#06D6A0" />
+                <StatBox label="CANADA RANK" value="#2" color="#06D6A0" />
+                <StatBox label="WORLD RANK" value="#55" color="#06D6A0" />
               </div>
             </div>
           </div>
@@ -851,7 +850,7 @@ export default function Home() {
               <div className="label-mono text-xs mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>TEAM 31200K · ONTARIO, CANADA · 2025–2026</div>
             </div>
             <div className="label-mono text-xs text-right" style={{ color: "rgba(255,255,255,0.25)" }}>
-              VEX IQ RAPID RELAY<br />ENGINEERING NOTEBOOK
+              VEX IQ MIX & MATCH<br />ENGINEERING NOTEBOOK
             </div>
           </div>
         </div>
