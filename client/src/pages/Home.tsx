@@ -175,13 +175,12 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        let minDistance = Infinity;
+        let maxRatio = 0;
         let activeIdx = -1;
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const distance = Math.abs(entry.boundingClientRect.top);
-            if (distance < minDistance) {
-              minDistance = distance;
+          if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+            if (entry.intersectionRatio > maxRatio) {
+              maxRatio = entry.intersectionRatio;
               const idx = sectionRefs.current.findIndex((r) => r === entry.target);
               if (idx !== -1) activeIdx = idx;
             }
@@ -189,7 +188,7 @@ export default function Home() {
         });
         if (activeIdx !== -1) setActiveSection(activeIdx);
       },
-      { threshold: [0, 0.25, 0.5, 0.75, 1] }
+      { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] }
     );
     sectionRefs.current.forEach((ref) => ref && observer.observe(ref));
     return () => observer.disconnect();
