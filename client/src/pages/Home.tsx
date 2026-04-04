@@ -471,8 +471,67 @@ export default function Home() {
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Design & Build</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            Engineering decisions that shaped our robot — from drivetrain selection to claw mechanism design.
+            Engineering decisions that shaped our robot — from design brainstorming to final mechanism tuning.
           </p>
+
+          {/* Design Brainstorming Phase */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(155,93,229,0.25)", background: "rgba(155,93,229,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>EARLY SEASON — DESIGN BRAINSTORMING</div>
+            <h3 className="text-2xl font-bold mb-6">Robot Design Selection Process</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)" }}>
+                <div className="text-lg font-bold mb-2" style={{ color: "#9B5DE5" }}>Hero Bot</div>
+                <div className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Official VEX IQ reference</div>
+                <div className="space-y-1 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <div>Simple structure</div>
+                  <div>Good for learning</div>
+                  <div>Limited competitive edge</div>
+                </div>
+              </div>
+              <div className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)" }}>
+                <div className="text-lg font-bold mb-2" style={{ color: "#9B5DE5" }}>180 Flipping Mech</div>
+                <div className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Community design</div>
+                <div className="space-y-1 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <div>Faster stacking</div>
+                  <div>Better scoring potential</div>
+                  <div>Competitive advantage</div>
+                </div>
+              </div>
+              <div className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.3)", background: "rgba(155,93,229,0.1)" }}>
+                <div className="text-lg font-bold mb-2" style={{ color: "#9B5DE5" }}>OUR CHOICE</div>
+                <div className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>180 Mech Robot</div>
+                <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Grab two pins and flip them onto a beam to create high-value stacks</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Initial Build Phase */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(155,93,229,0.25)", background: "rgba(155,93,229,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>SEP 21 — INITIAL BUILD</div>
+            <h3 className="text-2xl font-bold mb-4">Foundation Assembly</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <span className="text-2xl">⚙</span>
+                  <div>
+                    <div className="font-semibold">Long Gear System</div>
+                    <div className="text-sm text-white/60">Connects wheels for smooth synchronized movement</div>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl">📐</span>
+                  <div>
+                    <div className="font-semibold">Alignment & Calibration</div>
+                    <div className="text-sm text-white/60">Ensured proper gear synchronization for reliable drive</div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4" style={{ background: "rgba(155,93,229,0.1)", border: "1px dashed rgba(155,93,229,0.3)" }}>
+                <div className="label-mono text-xs mb-2" style={{ color: "#9B5DE5" }}>KEY MILESTONE</div>
+                <div className="text-sm">Established stable drivetrain foundation that would support all future mechanisms</div>
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Drivetrain Decision */}
@@ -549,6 +608,36 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Mid-Season Design Iteration */}
+          <div className="mt-12 p-8 border" style={{ borderColor: "rgba(155,93,229,0.25)", background: "rgba(155,93,229,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>MID-SEASON — DESIGN EVOLUTION (DEC 7)</div>
+            <h3 className="text-2xl font-bold mb-6">Robot Design v2 Brainstorming</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)" }}>
+                <div className="font-bold mb-2" style={{ color: "#9B5DE5" }}>180 Mech v1</div>
+                <div className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Proven in competition</div>
+                <div className="space-y-1 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <div>Reliable performance at two events</div>
+                  <div>Known mechanics and tuning</div>
+                  <div>Competitive results (Innovate Award)</div>
+                </div>
+              </div>
+              <div className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)" }}>
+                <div className="font-bold mb-2" style={{ color: "#9B5DE5" }}>Revolver Design</div>
+                <div className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Alternative approach</div>
+                <div className="space-y-1 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <div>Experimental mechanics</div>
+                  <div>Untested in competitive matches</div>
+                  <div>Higher risk with uncertain reward</div>
+                </div>
+              </div>
+            </div>
+            <div className="p-4" style={{ background: "rgba(155,93,229,0.1)", border: "1px solid rgba(155,93,229,0.3)" }}>
+              <div className="font-semibold mb-1">Final Decision: Stick with 180 Mech v1</div>
+              <div className="text-sm text-white/70">After Feb 8 competition success and strong Innovate Award recognition, team decided proven design was best strategy for Provincial Championship</div>
             </div>
           </div>
 
