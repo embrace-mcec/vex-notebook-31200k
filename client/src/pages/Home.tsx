@@ -837,7 +837,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">CHAPTER 05</SectionTag>
+            <SectionTag color="#4CC9F0">CHAPTER 04</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Testing & Tuning</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -1076,7 +1076,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#FB8500" }} />
-            <SectionTag color="#FB8500">CHAPTER 07</SectionTag>
+            <SectionTag color="#FB8500">CHAPTER 06</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#FB8500" }}>Competition Results</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -1185,7 +1185,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">CHAPTER 08</SectionTag>
+            <SectionTag color="#4CC9F0">CHAPTER 07</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Full Season Journey</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -1257,7 +1257,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#9B5DE5" }} />
-            <SectionTag color="#9B5DE5">TEAM LEADERSHIP</SectionTag>
+            <SectionTag color="#9B5DE5">CHAPTER 08</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Team Management</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
