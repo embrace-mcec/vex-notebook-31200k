@@ -189,6 +189,7 @@ export default function Home() {
   }, []);
 
   const scrollTo = (idx: number) => {
+    setActiveSection(idx);
     sectionRefs.current[idx]?.scrollIntoView({ behavior: "smooth" });
   };
 
