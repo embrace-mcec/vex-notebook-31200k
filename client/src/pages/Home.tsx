@@ -178,17 +178,15 @@ export default function Home() {
         let maxRatio = 0;
         let activeIdx = -1;
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-            if (entry.intersectionRatio > maxRatio) {
-              maxRatio = entry.intersectionRatio;
-              const idx = sectionRefs.current.findIndex((r) => r === entry.target);
-              if (idx !== -1) activeIdx = idx;
-            }
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            const idx = sectionRefs.current.findIndex((r) => r === entry.target);
+            if (idx !== -1) activeIdx = idx;
           }
         });
         if (activeIdx !== -1) setActiveSection(activeIdx);
       },
-      { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] }
+      { threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
     sectionRefs.current.forEach((ref) => ref && observer.observe(ref));
     return () => observer.disconnect();
@@ -1263,7 +1261,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
           {/* Season Schedule */}
           <div className="mb-12 p-8 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>SEASON TIMELINE</div>
+            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>TEAM TIMELINE</div>
             <h3 className="text-2xl font-bold mb-6">Mix & Match Season Schedule 2025-2026</h3>
             <div className="space-y-4">
               {[
