@@ -1259,7 +1259,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#9B5DE5" }} />
             <SectionTag color="#9B5DE5">TEAM LEADERSHIP</SectionTag>
           </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Team Manager</h2>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Team Management</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
             Comprehensive team management, meeting logs, and season planning documentation.
           </p>
