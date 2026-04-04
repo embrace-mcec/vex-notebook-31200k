@@ -175,14 +175,18 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        let maxRatio = 0;
+        let activeIdx = -1;
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
             const idx = sectionRefs.current.findIndex((r) => r === entry.target);
-            if (idx !== -1) setActiveSection(idx);
+            if (idx !== -1) activeIdx = idx;
           }
         });
+        if (activeIdx !== -1) setActiveSection(activeIdx);
       },
-      { threshold: 0.4 }
+      { threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
     sectionRefs.current.forEach((ref) => ref && observer.observe(ref));
     return () => observer.disconnect();
