@@ -175,13 +175,16 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        let maxRatio = 0;
+        let minDistance = Infinity;
         let activeIdx = -1;
         entries.forEach((entry) => {
-          if (entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            const idx = sectionRefs.current.findIndex((r) => r === entry.target);
-            if (idx !== -1) activeIdx = idx;
+          if (entry.isIntersecting) {
+            const distance = Math.abs(entry.boundingClientRect.top);
+            if (distance < minDistance) {
+              minDistance = distance;
+              const idx = sectionRefs.current.findIndex((r) => r === entry.target);
+              if (idx !== -1) activeIdx = idx;
+            }
           }
         });
         if (activeIdx !== -1) setActiveSection(activeIdx);
