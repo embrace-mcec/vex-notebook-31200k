@@ -17,7 +17,7 @@ const teamMembers = [
     interests: ["Skiing", "Lego", "Art"],
   },
   {
-    name: "Ray Lin",
+    name: "Ray Zhao",
     grade: "Grade 5",
     roles: ["Driver", "Programmer"],
     icon: "💻",
