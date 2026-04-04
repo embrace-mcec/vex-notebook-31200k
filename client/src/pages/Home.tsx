@@ -165,9 +165,11 @@ export default function Home() {
     { id: "team", label: "Team", color: "#FFB703" },
     { id: "game", label: "Game", color: "#FF6B9D" },
     { id: "design", label: "Design", color: "#9B5DE5" },
+    { id: "testing", label: "Testing", color: "#4CC9F0" },
     { id: "programming", label: "Code", color: "#06D6A0" },
     { id: "competition", label: "Competition", color: "#FB8500" },
     { id: "season", label: "Season", color: "#4CC9F0" },
+    { id: "team-management", label: "Team Mgmt", color: "#9B5DE5" },
   ];
 
   useEffect(() => {
