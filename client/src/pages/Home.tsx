@@ -700,6 +700,7 @@ export default function Home() {
 
       {/* ── ROBOT SPECIFICATIONS ── */}
       <section
+        ref={(el) => { sectionRefs.current[4] = el; }}
         id="specifications"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
@@ -830,7 +831,7 @@ export default function Home() {
       {/* ── COMPETITION ── */}
       {/* ── TESTING & TUNING ── */}
       <section
-        ref={(el) => { sectionRefs.current[4] = el; }}
+        ref={(el) => { sectionRefs.current[5] = el; }}
         id="testing"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
