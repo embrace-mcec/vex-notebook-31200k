@@ -698,486 +698,7 @@ export default function Home() {
 
       {/* ── TESTING & TUNING ── */}
       <section
-        ref={(el) => { sectionRefs.current[7] = el; }}
-        id="testing"
-        className="min-h-screen py-24"
-        style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
-      >
-        <div className="container max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">CHAPTER 07</SectionTag>
-          </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Testing & Tuning</h2>
-          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            Iterative refinement through systematic testing, performance measurement, and rapid prototyping.
-          </p>
-
-          {/* First Drive Testing */}
-          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>OCT 12 — FIRST DRIVE TESTING</div>
-            <h3 className="text-2xl font-bold mb-6">Initial Performance Evaluation</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <div className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>First time team members drove the robot in a 30-second run. Tested movement, scoring capability, and driver performance to select drivers for future matches.</div>
-                <div className="space-y-3">
-                  <div className="flex gap-3">
-                    <span className="text-2xl">🎯</span>
-                    <div>
-                      <div className="font-semibold">Objective</div>
-                      <div className="text-sm text-white/60">Evaluate driver performance and robot responsiveness</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-2xl">📊</span>
-                    <div>
-                      <div className="font-semibold">Methodology</div>
-                      <div className="text-sm text-white/60">Each driver completed a 30-second run with scoring</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.2)" }}>
-                <div className="label-mono text-xs mb-3" style={{ color: "#4CC9F0" }}>DRIVER PERFORMANCE SCORES</div>
-                <div className="space-y-2">
-                  {[
-                    { name: "Matthew", score: 16, selected: true },
-                    { name: "Yusuf", score: 2, selected: false },
-                    { name: "Eesa", score: 2, selected: false },
-                    { name: "Chen", score: 2, selected: false },
-                  ].map((driver) => (
-                    <div key={driver.name} className="flex justify-between items-center pb-2" style={{ borderBottom: "1px solid rgba(76,201,240,0.1)" }}>
-                      <span className="text-sm">{driver.name}</span>
-                      <div className="flex gap-2 items-center">
-                        <span className="label-mono text-xs" style={{ color: driver.selected ? "#4CC9F0" : "rgba(255,255,255,0.4)" }}>{driver.score} pts</span>
-                        {driver.selected && <span style={{ color: "#4CC9F0" }}>✓</span>}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Tubing Optimization */}
-          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>OCT 19 — TUBING OPTIMIZATION</div>
-            <h3 className="text-2xl font-bold mb-6">Mechanical Refinement</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
-                <div className="text-lg font-bold mb-2" style={{ color: "#4CC9F0" }}>Problem</div>
-                <div className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Long tubes interfering with gears, causing jerky movement and inconsistent performance</div>
-              </div>
-              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
-                <div className="text-lg font-bold mb-2" style={{ color: "#4CC9F0" }}>Solution</div>
-                <div className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Trimmed excess length and rerouted tubes away from moving parts</div>
-              </div>
-              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.3)", background: "rgba(76,201,240,0.1)" }}>
-                <div className="text-lg font-bold mb-2" style={{ color: "#4CC9F0" }}>Result</div>
-                <div className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Smooth operation, zero interference, improved reliability</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Grip & Strategy Upgrade */}
-          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>FEB 8 — GRIP & STRATEGY UPGRADE</div>
-            <h3 className="text-2xl font-bold mb-6">Pre-Competition Optimization</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div>
-                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>MECHANICAL IMPROVEMENT</div>
-                  <div className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.7)" }}>Added tension rubber bands to claw mechanism</div>
-                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Increased grip force and pin retention during transport</div>
-                </div>
-                <div>
-                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>STRATEGIC ADJUSTMENT</div>
-                  <div className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.7)" }}>Targeted Standoff Goal placement</div>
-                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Added 10 points per successful stack placement</div>
-                </div>
-              </div>
-              <div className="p-6 border" style={{ borderColor: "rgba(76,201,240,0.2)", background: "rgba(76,201,240,0.08)" }}>
-                <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>PERFORMANCE METRICS</div>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-semibold">Grip Success Rate</span>
-                      <span className="label-mono text-xs" style={{ color: "#4CC9F0" }}>+50%</span>
-                    </div>
-                    <div className="h-2 bg-white/10 relative overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="w-1/2 bg-red-500/40" />
-                        <div className="w-1/2" style={{ background: "#4CC9F0" }} />
-                      </div>
-                    </div>
-                    <div className="flex justify-between mt-1 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                      <span>Before: 6/10</span>
-                      <span>After: 9/10</span>
-                    </div>
-                  </div>
-                  <div className="pt-3" style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}>
-                    <div className="text-sm font-semibold mb-1">Result</div>
-                    <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>Reliable pin transport enabled consistent scoring and Innovate Award recognition</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Testing Principles */}
-          <div className="p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>TESTING METHODOLOGY</div>
-            <h3 className="text-2xl font-bold mb-6">Continuous Improvement Framework</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { icon: "🔍", title: "Identify", desc: "Systematic observation of robot behavior during testing" },
-                { icon: "🔧", title: "Diagnose", desc: "Root cause analysis of performance issues" },
-                { icon: "⚙️", title: "Refine", desc: "Rapid prototyping and mechanical adjustments" },
-                { icon: "📈", title: "Measure", desc: "Quantify improvements with performance metrics" },
-              ].map((step) => (
-                <div key={step.title} className="flex gap-4">
-                  <div className="text-3xl">{step.icon}</div>
-                  <div>
-                    <div className="font-semibold mb-1">{step.title}</div>
-                    <div className="text-sm text-white/60">{step.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROGRAMMING ── */}
-      <section
-        ref={(el) => { sectionRefs.current[5] = el; }}
-        id="programming"
-        className="min-h-screen py-24"
-        style={{ borderTop: "1px solid rgba(6,214,160,0.2)" }}
-      >
-        <div className="container max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#06D6A0" }} />
-            <SectionTag color="#06D6A0">CHAPTER 04</SectionTag>
-          </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#06D6A0" }}>Programming Journey</h2>
-          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            Building the robot's brain — from basic drive code to sensor automation and autonomous skills.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Timeline */}
-            <div>
-              <div className="relative pl-8 border-l-2" style={{ borderColor: "rgba(6,214,160,0.3)" }}>
-                {programTimeline.map((item, i) => (
-                  <div key={item.date} className="mb-8 relative">
-                    <div
-                      className="absolute -left-[37px] top-1 w-3 h-3 rounded-full border-2"
-                      style={{ borderColor: "#06D6A0", background: "#0D1B2A", boxShadow: "0 0 8px rgba(6,214,160,0.5)" }}
-                    />
-                    <div className="label-mono text-xs mb-1" style={{ color: "#06D6A0" }}>{item.date}</div>
-                    <div className="font-bold text-base mb-1">{item.title}</div>
-                    <div className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>{item.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* VR Skills Chart + Programmer */}
-            <div className="flex flex-col gap-6">
-              {/* Code snippet */}
-              <div className="border overflow-hidden" style={{ borderColor: "rgba(6,214,160,0.3)", background: "#09121D" }}>
-                <div className="px-4 py-2 flex items-center gap-2 border-b" style={{ borderColor: "rgba(6,214,160,0.2)", background: "rgba(6,214,160,0.08)" }}>
-                  <span className="text-xs" style={{ color: "#06D6A0", fontFamily: "'Space Mono', monospace" }}>main.cpp — VEXcode Pro</span>
-                </div>
-                <pre className="p-4 text-xs overflow-x-auto" style={{ fontFamily: "'Space Mono', monospace", lineHeight: 1.8 }}>
-                  <span style={{ color: "#5C677D" }}>// Key Features</span>{"\n"}
-                  <span style={{ color: "#C792EA" }}>void</span> <span style={{ color: "#82AAFF" }}>setupRobot</span>{"() {"}{"\n"}
-                  {"  "}<span style={{ color: "#5C677D" }}>// 1. Tank Drive</span>{"\n"}
-                  {"  "}Drivetrain.<span style={{ color: "#82AAFF" }}>setDriveMode</span>(<span style={{ color: "#C3E88D" }}>Tank</span>);{"\n"}
-                  {"  "}<span style={{ color: "#5C677D" }}>// 2. Sensor Automation</span>{"\n"}
-                  {"  "}<span style={{ color: "#C792EA" }}>if</span> (DistanceSensor.<span style={{ color: "#82AAFF" }}>objectDetected</span>()) {"{"}{"\n"}
-                  {"    "}Claw.<span style={{ color: "#82AAFF" }}>close</span>(); <span style={{ color: "#5C677D" }}>// Auto-grab</span>{"\n"}
-                  {"  }"}{"\n"}
-                  {"  "}<span style={{ color: "#5C677D" }}>// 3. Autonomous</span>{"\n"}
-                  {"  "}Competition.<span style={{ color: "#82AAFF" }}>autonomous</span>(runSkills);{"\n"}
-                  {"}"}
-                </pre>
-              </div>
-
-              {/* VR Skills Progress Chart */}
-              <div className="p-5 border" style={{ borderColor: "rgba(6,214,160,0.2)", background: "rgba(6,214,160,0.04)" }}>
-                <div className="label-mono text-xs mb-4" style={{ color: "#06D6A0" }}>VR SKILLS SCORE PROGRESSION</div>
-                <div style={{ height: 180 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={vrSkillsData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-                      <XAxis dataKey="month" tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11, fontFamily: "'Space Mono', monospace" }} axisLine={false} tickLine={false} />
-                      <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11, fontFamily: "'Space Mono', monospace" }} axisLine={false} tickLine={false} />
-                      <Tooltip contentStyle={{ background: "#0D1B2A", border: "1px solid rgba(6,214,160,0.3)", fontFamily: "'Space Mono', monospace", fontSize: 12 }} />
-                      <Line type="monotone" dataKey="score" stroke="#06D6A0" strokeWidth={2} dot={{ fill: "#06D6A0", r: 4 }} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-
-              {/* Programmer Stats */}
-              <div className="grid grid-cols-3 gap-3">
-                <div className="col-span-1 p-4 border flex flex-col items-center justify-center" style={{ borderColor: "rgba(6,214,160,0.2)", background: "rgba(6,214,160,0.06)" }}>
-                  <div className="text-3xl mb-1">👨‍💻</div>
-                  <div className="font-bold text-sm text-center">Ray Zhao</div>
-                  <div className="label-mono text-xs" style={{ color: "#06D6A0" }}>PROGRAMMER</div>
-                </div>
-                <StatBox label="CANADA RANK" value="#2" color="#06D6A0" />
-                <StatBox label="WORLD RANK" value="#55" color="#06D6A0" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── ROBOT SPECIFICATIONS ── */}
-      <section
-        ref={(el) => { sectionRefs.current[5] = el; }}
-        id="specifications"
-        className="min-h-screen py-24"
-        style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
-      >
-        <div className="container max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">TECHNICAL REFERENCE</SectionTag>
-          </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Robot Specifications</h2>
-          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            Complete technical documentation of the 180 Mech v1 robot design, including motors, sensors, and mechanical systems.
-          </p>
-
-          {/* Key Innovations */}
-          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>DESIGN HIGHLIGHTS</div>
-            <h3 className="text-2xl font-bold mb-6">Key Innovations</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Distance Sensor Automation",
-                  desc: "Reduces manual driver input and enables consistent arm positioning without button presses"
-                },
-                {
-                  title: "Pneumatic Claw Design",
-                  desc: "Reliable grip with adjustable tension via rubber bands for consistent pin transport"
-                },
-                {
-                  title: "Tank Drive Simplicity",
-                  desc: "Prioritizes reliability and driver confidence over complex maneuverability"
-                },
-                {
-                  title: "Tubing Optimization",
-                  desc: "Shortened and rerouted to prevent mechanical interference and ensure smooth operation"
-                },
-              ].map((innovation, idx) => (
-                <div key={idx} className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
-                  <div className="font-semibold mb-2" style={{ color: "#4CC9F0" }}>{innovation.title}</div>
-                  <div className="text-sm text-white/70">{innovation.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Technical Specifications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {[
-              {
-                title: "Drivetrain System",
-                icon: "⚙️",
-                specs: [
-                  { label: "Type", value: "Tank Drive (2-motor)" },
-                  { label: "Motors", value: "2x VEX IQ Smart Motors" },
-                  { label: "Wheels", value: "4-wheel configuration" },
-                  { label: "Advantage", value: "Simple, reliable, straight movement" },
-                ]
-              },
-              {
-                title: "Claw & Clamp Mechanism",
-                icon: "🦾",
-                specs: [
-                  { label: "Type", value: "Pneumatic-actuated claw" },
-                  { label: "Actuators", value: "Pistons with rubber band tension" },
-                  { label: "Success Rate", value: "90% (9/10 transports)" },
-                  { label: "Improvement", value: "+50% from initial 60%" },
-                ]
-              },
-              {
-                title: "Arm & Lift System",
-                icon: "🔧",
-                specs: [
-                  { label: "Type", value: "180-degree rotating arm" },
-                  { label: "Motor", value: "1x VEX IQ Smart Motor" },
-                  { label: "Range", value: "Full 180-degree rotation" },
-                  { label: "Height Extended", value: "18+ inches" },
-                ]
-              },
-              {
-                title: "Sensor & Automation",
-                icon: "📡",
-                specs: [
-                  { label: "Primary Sensor", value: "Distance sensor" },
-                  { label: "Function", value: "Automated arm positioning" },
-                  { label: "Threshold", value: "20mm for arm lock" },
-                  { label: "Benefit", value: "Eliminates manual button presses" },
-                ]
-              },
-            ].map((section, idx) => (
-              <div key={idx} className="p-6 border" style={{ borderColor: "rgba(76,201,240,0.2)", background: "rgba(76,201,240,0.03)" }}>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">{section.icon}</span>
-                  <h4 className="font-semibold" style={{ color: "#4CC9F0" }}>{section.title}</h4>
-                </div>
-                <div className="space-y-3">
-                  {section.specs.map((spec, sidx) => (
-                    <div key={sidx} className="flex justify-between items-start gap-3 pb-2" style={{ borderBottom: "1px solid rgba(76,201,240,0.1)" }}>
-                      <span className="label-mono text-xs text-white/60">{spec.label}</span>
-                      <span className="text-sm text-right" style={{ color: "rgba(255,255,255,0.8)" }}>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Performance Metrics */}
-          <div className="p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>VALIDATED PERFORMANCE</div>
-            <h3 className="text-2xl font-bold mb-6">Proven Results</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { metric: "Grip Success Rate", value: "90%", detail: "9/10 pin transports" },
-                { metric: "Average Match Score", value: "99.2 pts", detail: "Feb 8 qualifier" },
-                { metric: "VR Skills Score", value: "140 pts", detail: "Final season score" },
-              ].map((perf, idx) => (
-                <div key={idx} className="p-4 border text-center" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
-                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>{perf.metric}</div>
-                  <div className="text-3xl font-extrabold mb-1">{perf.value}</div>
-                  <div className="text-xs text-white/60">{perf.detail}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── COMPETITION ── */}
-      <section
-        ref={(el) => { sectionRefs.current[6] = el; }}
-        id="competition"
-        className="min-h-screen py-24"
-        style={{ borderTop: "1px solid rgba(251,133,0,0.2)" }}
-      >
-        <div className="container max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#FB8500" }} />
-            <SectionTag color="#FB8500">CHAPTER 05</SectionTag>
-          </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#FB8500" }}>Competition Results</h2>
-          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            From our first match to the Ontario Provincial Championship — performance data and lessons learned.
-          </p>
-
-          {/* Innovate Award Highlight */}
-          <div className="mb-10 p-8 border-2 relative overflow-hidden" style={{ borderColor: "#FB8500", background: "linear-gradient(135deg, rgba(251,133,0,0.1), rgba(13,27,42,0.8))" }}>
-            <div className="absolute top-4 right-6 text-6xl opacity-20">🏆</div>
-            <div className="label-mono text-xs mb-2" style={{ color: "#FB8500" }}>NOV 2, 2025 — CAUTION TAPE HALLOWEEN QUALIFIER
-FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
-            <div className="text-4xl font-extrabold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>INNOVATE AWARD</div>
-            <p className="text-base" style={{ color: "rgba(255,255,255,0.7)", maxWidth: 600 }}>
-              Recognized for our <strong>sensor-driven automation system</strong> that uses a distance sensor to automatically control the claw arm — eliminating manual button presses and reducing driver cognitive load.
-            </p>
-          </div>
-
-          {/* Competition Chart */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-            <div className="p-5 border" style={{ borderColor: "rgba(251,133,0,0.2)", background: "rgba(251,133,0,0.04)" }}>
-              <div className="label-mono text-xs mb-4" style={{ color: "#FB8500" }}>AVERAGE SCORE BY EVENT</div>
-              <div style={{ height: 220 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={competitionData} margin={{ top: 5, right: 10, left: -20, bottom: 40 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                    <XAxis dataKey="event" tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 10, fontFamily: "'Space Mono', monospace" }} axisLine={false} tickLine={false} angle={-20} textAnchor="end" interval={0} />
-                    <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11, fontFamily: "'Space Mono', monospace" }} axisLine={false} tickLine={false} />
-                    <Tooltip contentStyle={{ background: "#0D1B2A", border: "1px solid rgba(251,133,0,0.3)", fontFamily: "'Space Mono', monospace", fontSize: 12 }} />
-                    <Bar dataKey="avg" fill="#FB8500" radius={[2, 2, 0, 0]} />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-
-            {/* Lessons Learned */}
-            <div className="p-5 border" style={{ borderColor: "rgba(251,133,0,0.2)", background: "rgba(251,133,0,0.04)" }}>
-              <div className="label-mono text-xs mb-4" style={{ color: "#FB8500" }}>TACTICAL LESSONS LEARNED</div>
-              <div className="space-y-4">
-                {[
-                  { icon: "🔭", title: "Scouting Matters", desc: "Observing other teams helps predict alliance performance." },
-                  { icon: "🎲", title: "Alliance Variability", desc: "Scores vary greatly depending on partner strength." },
-                  { icon: "📋", title: "Inspection is Critical", desc: "Proper preparation prevents disqualification risks." },
-                  { icon: "🤝", title: "Teamwork is Key", desc: "Supporting your alliance partner is as important as driving." },
-                ].map((l) => (
-                  <div key={l.title} className="flex gap-3">
-                    <span className="text-xl">{l.icon}</span>
-                    <div>
-                      <div className="font-semibold text-sm">{l.title}</div>
-                      <div className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>{l.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Detailed Competition Events */}
-          <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { date: "Nov 2", name: "Caution Tape Halloween Qualifier", avg: 39.4, skills: 2, award: "Innovate Award" },
-              { date: "Nov 15", name: "Brampton Mix & Match", avg: 88.2, note: "Supporting 31200A" },
-              { date: "Jan 17", name: "Brampton Mix & Match", avg: 68.7, note: "Supporting 31200A" },
-              { date: "Feb 8", name: "Caution Tape Lunar New Year Qualifier", avg: 99.2, skills: 60, award: "Innovate Award" },
-            ].map((event) => (
-              <div key={event.date} className="p-5 border" style={{ borderColor: "rgba(251,133,0,0.25)", background: "rgba(251,133,0,0.05)" }}>
-                <div className="label-mono text-xs mb-2" style={{ color: "#FB8500" }}>{event.date}</div>
-                <div className="font-bold mb-3" style={{ fontSize: "14px" }}>{event.name}</div>
-                <div className="space-y-2 text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
-                  {event.avg && <div>Average Score: <strong>{event.avg}</strong></div>}
-                  {event.skills && <div>Skills: <strong>{event.skills} pts</strong></div>}
-                  {event.award && <div style={{ color: "#FB8500", fontWeight: "bold" }}>{event.award}</div>}
-                  {event.note && <div style={{ color: "#FFB703", fontStyle: "italic" }}>{event.note}</div>}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* U.S. Open Invitation */}
-          <div className="p-6 border" style={{ borderColor: "rgba(251,133,0,0.3)", background: "rgba(251,133,0,0.06)" }}>
-            <div className="flex items-start gap-6">
-              <div className="text-5xl flex-shrink-0">✏️</div>
-              <div>
-                <div className="label-mono text-xs mb-1" style={{ color: "#FB8500" }}>ACHIEVEMENT UNLOCKED</div>
-                <h3 className="text-2xl font-bold mb-2">CREATE U.S. Open Robotics Championship</h3>
-                <div className="flex flex-wrap gap-4 mb-3">
-                  <span className="label-mono text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>📅 March 26–28, 2026</span>
-                  <span className="label-mono text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>📍 Council Bluffs, Iowa</span>
-                  <span className="label-mono text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>🏟 Iowa West Field House</span>
-                </div>
-                <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  An official invitation to one of North America's premier VEX IQ events — received early in our very first season. This recognition validated our innovative approach and hard work.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SEASON TIMELINE ── */}
-      <section
-        ref={(el) => { sectionRefs.current[7] = el; }}
+        ref={(el) => { sectionRefs.current[4] = el; }}
         id="season"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
@@ -1185,9 +706,9 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">CHAPTER 06</SectionTag>
+            <SectionTag color="#4CC9F0">CHAPTER 05</SectionTag>
           </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Full Season Journey</h2>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Testing & Tuning</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
             From registration to the World Championship — every milestone on our path.
           </p>
@@ -1249,7 +770,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
       {/* ── TEAM MANAGER ── */}
       <section
-        ref={(el) => { sectionRefs.current[8] = el; }}
+        ref={(el) => { sectionRefs.current[9] = el; }}
         id="team-manager"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(155,93,229,0.2)" }}
@@ -1257,9 +778,9 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#9B5DE5" }} />
-            <SectionTag color="#9B5DE5">TEAM LEADERSHIP</SectionTag>
+            <SectionTag color="#9B5DE5">CHAPTER 09</SectionTag>
           </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Team Manager</h2>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Team Management</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
             Comprehensive team management, meeting logs, and season planning documentation.
           </p>
@@ -1297,55 +818,28 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
               Teams 31200K and 31200A meet every <strong>Sunday for 2 hours</strong> to build, practice, and work as one big team. Below is a comprehensive log of all team meetings throughout the season.
             </p>
             
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ borderBottom: "2px solid rgba(155,93,229,0.3)" }}>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Date</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Matthew</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Ray</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Chen</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Liam</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Meeting Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { date: "2025-09-07", matthew: "✓", ray: "✓", chen: "-", liam: "✓", notes: "Kickoff meeting, vote for team name" },
-                    { date: "2025-09-14", matthew: "✓", ray: "✓", chen: "◐", liam: "✓", notes: "Game strategy analysis, field setup" },
-                    { date: "2025-09-21", matthew: "-", ray: "✓", chen: "✓", liam: "✓", notes: "Brainstorming, Prototyping; programming environment setup" },
-                    { date: "2025-09-28", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train analysis and building; programming learning" },
-                    { date: "2025-10-05", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train building, Claw & Clamp initial design; controller pairing" },
-                    { date: "2025-10-12", matthew: "✓", ray: "✓", chen: "-", liam: "-", notes: "First drive testing" },
-                    { date: "2025-10-19", matthew: "✓", ray: "✓", chen: "✓", liam: "-", notes: "Drive practicing" },
-                    { date: "2025-10-26", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Competition rule learning, auto skills programming" },
-                    { date: "2025-11-02", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "K team's competition (CautionTape)" },
-                    { date: "2025-11-09", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection" },
-                    { date: "2025-11-23", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive testing; VR skills training" },
-                    { date: "2025-11-30", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "2nd field setup; VR skills" },
-                    { date: "2025-12-07", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Building improvement; new Robot brainstorming (Revolver)" },
-                    { date: "2025-12-14", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "new Robot building; VR skills" },
-                    { date: "2026-01-11", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive practice, interview practice" },
-                    { date: "2026-01-17", matthew: "-", ray: "-", chen: "-", liam: "-", notes: "Support A team's competition (Brampton)" },
-                    { date: "2026-02-01", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Brampton competition reflection; new Robot building" },
-                    { date: "2026-02-08", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Both A & K team's competition (CautionTape)" },
-                    { date: "2026-02-15", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection, support K team drive practice" },
-                    { date: "2026-02-22", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "drive practice, decision for new Robot" },
-                  ].map((row, idx) => (
-                    <tr key={idx} style={{ borderBottom: "1px solid rgba(155,93,229,0.1)" }}>
-                      <td className="p-3 label-mono text-xs" style={{ color: "#9B5DE5" }}>{row.date}</td>
-                      <td className="p-3 text-center">{row.matthew}</td>
-                      <td className="p-3 text-center">{row.ray}</td>
-                      <td className="p-3 text-center">{row.chen}</td>
-                      <td className="p-3 text-center">{row.liam}</td>
-                      <td className="p-3 text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>{row.notes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-              <p><strong>Legend:</strong> ✓ = Present | ◐ = Partial | - = Absent</p>
+                        <div className="space-y-3">
+              {[
+                { month: "September 2025", meetings: 4, focus: "Kickoff, Strategy, Brainstorming, Drive Training", attendance: "95%" },
+                { month: "October 2025", meetings: 4, focus: "Drive Building, Claw Design, First Testing, Competition Rules", attendance: "100%" },
+                { month: "November 2025", meetings: 3, focus: "Competition Events, VR Skills Training, Field Setup", attendance: "100%" },
+                { month: "December 2025", meetings: 2, focus: "Building Improvements, Robot Redesign Brainstorming", attendance: "100%" },
+                { month: "January 2026", meetings: 2, focus: "Drive Practice, Interview Prep, Support 31200A", attendance: "100%" },
+                { month: "February 2026", meetings: 4, focus: "Competition Events, Robot Building, Drive Practice", attendance: "100%" },
+              ].map((month, idx) => (
+                <div key={idx} className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)", background: "rgba(155,93,229,0.03)" }}>
+                  <div className="flex justify-between items-start gap-4 mb-2">
+                    <div>
+                      <div className="font-semibold" style={{ color: "#9B5DE5" }}>{month.month}</div>
+                      <div className="label-mono text-xs text-white/60 mt-1">{month.meetings} meetings · {month.focus}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-semibold" style={{ color: "#06D6A0" }}>{month.attendance}</div>
+                      <div className="label-mono text-xs text-white/60">Attendance</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
