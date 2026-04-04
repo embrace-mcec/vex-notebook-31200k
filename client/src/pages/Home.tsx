@@ -1234,16 +1234,6 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="mt-16 pt-8 border-t flex items-center justify-between" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-            <div>
-              <div className="text-2xl font-extrabold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#FFB703" }}>INTELLIGENCE WINS</div>
-              <div className="label-mono text-xs mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>TEAM 31200K · ONTARIO, CANADA · 2025–2026</div>
-            </div>
-            <div className="label-mono text-xs text-right" style={{ color: "rgba(255,255,255,0.25)" }}>
-              VEX IQ MIX & MATCH<br />ENGINEERING NOTEBOOK
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1375,6 +1365,17 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
                 <div>🔧 <strong>Liam Qian</strong> - Builder</div>
                 <div>📖 <strong>Chen Li</strong> - Builder & Notebooker</div>
               </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="mt-16 pt-8 border-t flex items-center justify-between" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <div>
+              <div className="text-2xl font-extrabold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#FFB703" }}>INTELLIGENCE WINS</div>
+              <div className="label-mono text-xs mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>TEAM 31200K · ONTARIO, CANADA · 2025–2026</div>
+            </div>
+            <div className="label-mono text-xs text-right" style={{ color: "rgba(255,255,255,0.25)" }}>
+              VEX IQ MIX & MATCH<br />ENGINEERING NOTEBOOK
             </div>
           </div>
         </div>
