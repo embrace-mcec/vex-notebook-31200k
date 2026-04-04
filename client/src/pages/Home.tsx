@@ -1246,7 +1246,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
       <section
         ref={(el) => { sectionRefs.current[8] = el; }}
         id="team-management"
-        className="min-h-screen py-24"
+        className="min-h-screen py-24 pb-48"
         style={{ borderTop: "1px solid rgba(155,93,229,0.2)" }}
       >
         <div className="container max-w-6xl mx-auto px-8">
