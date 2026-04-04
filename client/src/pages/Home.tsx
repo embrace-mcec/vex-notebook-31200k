@@ -983,7 +983,7 @@ export default function Home() {
 
       {/* ── PROGRAMMING ── */}
       <section
-        ref={(el) => { sectionRefs.current[7] = el; }}
+        ref={(el) => { sectionRefs.current[5] = el; }}
         id="programming"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(6,214,160,0.2)" }}
@@ -1179,7 +1179,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
       {/* ── SEASON TIMELINE ── */}
       <section
-        ref={(el) => { sectionRefs.current[8] = el; }}
+        ref={(el) => { sectionRefs.current[7] = el; }}
         id="season"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
@@ -1241,8 +1241,8 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
       {/* ── TEAM MANAGER ── */}
       <section
-        ref={(el) => { sectionRefs.current[9] = el; }}
-        id="team-manager"
+        ref={(el) => { sectionRefs.current[8] = el; }}
+        id="team-management"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(155,93,229,0.2)" }}
       >
