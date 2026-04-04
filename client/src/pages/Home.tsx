@@ -925,7 +925,7 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-3">
                 <div className="col-span-1 p-4 border flex flex-col items-center justify-center" style={{ borderColor: "rgba(6,214,160,0.2)", background: "rgba(6,214,160,0.06)" }}>
                   <div className="text-3xl mb-1">👨‍💻</div>
-                  <div className="font-bold text-sm text-center">Ray Lin</div>
+                  <div className="font-bold text-sm text-center">Ray Zhao</div>
                   <div className="label-mono text-xs" style={{ color: "#06D6A0" }}>PROGRAMMER</div>
                 </div>
                 <StatBox label="CANADA RANK" value="#2" color="#06D6A0" />
@@ -1242,6 +1242,139 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
             </div>
             <div className="label-mono text-xs text-right" style={{ color: "rgba(255,255,255,0.25)" }}>
               VEX IQ MIX & MATCH<br />ENGINEERING NOTEBOOK
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TEAM MANAGER ── */}
+      <section
+        ref={(el) => { sectionRefs.current[8] = el; }}
+        id="team-manager"
+        className="min-h-screen py-24"
+        style={{ borderTop: "1px solid rgba(155,93,229,0.2)" }}
+      >
+        <div className="container max-w-6xl mx-auto px-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#9B5DE5" }} />
+            <SectionTag color="#9B5DE5">TEAM LEADERSHIP</SectionTag>
+          </div>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#9B5DE5" }}>Team Manager</h2>
+          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
+            Comprehensive team management, meeting logs, and season planning documentation.
+          </p>
+
+          {/* Season Schedule */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>SEASON TIMELINE</div>
+            <h3 className="text-2xl font-bold mb-6">Mix & Match Season Schedule 2025-2026</h3>
+            <div className="space-y-4">
+              {[
+                { phase: "Team Registration", timeline: "June - July 2025", desc: "Official team registration and preparation" },
+                { phase: "Team Preparation", timeline: "July - August 2025", desc: "Initial planning and resource gathering" },
+                { phase: "Team Meeting, Robotics Building & Programming", timeline: "September 2025 - February 2026", desc: "Core development phase with weekly meetings" },
+                { phase: "Research & Prototyping", timeline: "September - October 2025", desc: "Design exploration and initial prototypes" },
+                { phase: "Competition Season", timeline: "November 2025 - February 2026", desc: "Four qualifier events across Ontario" },
+                { phase: "Provincial Championship", timeline: "March 7-8, 2026", desc: "Qualification achieved - competing for provincial title" },
+                { phase: "World Championship", timeline: "May 2026", desc: "Target milestone - representing Ontario globally" },
+              ].map((item, idx) => (
+                <div key={idx} className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)", background: "rgba(155,93,229,0.03)" }}>
+                  <div className="flex justify-between items-start gap-4 mb-2">
+                    <div className="font-semibold" style={{ color: "#9B5DE5" }}>{item.phase}</div>
+                    <div className="label-mono text-xs text-white/60">{item.timeline}</div>
+                  </div>
+                  <p className="text-sm text-white/70">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Team Meeting Log */}
+          <div className="p-8 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>TEAM COORDINATION</div>
+            <h3 className="text-2xl font-bold mb-6">Team Meeting Log</h3>
+            <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Teams 31200K and 31200A meet every <strong>Sunday for 2 hours</strong> to build, practice, and work as one big team. Below is a comprehensive log of all team meetings throughout the season.
+            </p>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
+                <thead>
+                  <tr style={{ borderBottom: "2px solid rgba(155,93,229,0.3)" }}>
+                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Date</th>
+                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Matthew</th>
+                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Ray</th>
+                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Chen</th>
+                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Liam</th>
+                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Meeting Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { date: "2025-09-07", matthew: "✓", ray: "✓", chen: "-", liam: "✓", notes: "Kickoff meeting, vote for team name" },
+                    { date: "2025-09-14", matthew: "✓", ray: "✓", chen: "◐", liam: "✓", notes: "Game strategy analysis, field setup" },
+                    { date: "2025-09-21", matthew: "-", ray: "✓", chen: "✓", liam: "✓", notes: "Brainstorming, Prototyping; programming environment setup" },
+                    { date: "2025-09-28", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train analysis and building; programming learning" },
+                    { date: "2025-10-05", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train building, Claw & Clamp initial design; controller pairing" },
+                    { date: "2025-10-12", matthew: "✓", ray: "✓", chen: "-", liam: "-", notes: "First drive testing" },
+                    { date: "2025-10-19", matthew: "✓", ray: "✓", chen: "✓", liam: "-", notes: "Drive practicing" },
+                    { date: "2025-10-26", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Competition rule learning, auto skills programming" },
+                    { date: "2025-11-02", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "K team's competition (CautionTape)" },
+                    { date: "2025-11-09", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection" },
+                    { date: "2025-11-23", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive testing; VR skills training" },
+                    { date: "2025-11-30", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "2nd field setup; VR skills" },
+                    { date: "2025-12-07", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Building improvement; new Robot brainstorming (Revolver)" },
+                    { date: "2025-12-14", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "new Robot building; VR skills" },
+                    { date: "2026-01-11", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive practice, interview practice" },
+                    { date: "2026-01-17", matthew: "-", ray: "-", chen: "-", liam: "-", notes: "Support A team's competition (Brampton)" },
+                    { date: "2026-02-01", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Brampton competition reflection; new Robot building" },
+                    { date: "2026-02-08", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Both A & K team's competition (CautionTape)" },
+                    { date: "2026-02-15", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection, support K team drive practice" },
+                    { date: "2026-02-22", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "drive practice, decision for new Robot" },
+                  ].map((row, idx) => (
+                    <tr key={idx} style={{ borderBottom: "1px solid rgba(155,93,229,0.1)" }}>
+                      <td className="p-3 label-mono text-xs" style={{ color: "#9B5DE5" }}>{row.date}</td>
+                      <td className="p-3 text-center">{row.matthew}</td>
+                      <td className="p-3 text-center">{row.ray}</td>
+                      <td className="p-3 text-center">{row.chen}</td>
+                      <td className="p-3 text-center">{row.liam}</td>
+                      <td className="p-3 text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>{row.notes}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p><strong>Legend:</strong> ✓ = Present | ◐ = Partial | - = Absent</p>
+            </div>
+          </div>
+
+          {/* Team Insights */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
+              <div className="label-mono text-xs mb-3" style={{ color: "#9B5DE5" }}>TEAM COMMITMENT</div>
+              <h4 className="font-semibold mb-3">Attendance & Dedication</h4>
+              <p className="text-sm text-white/70 mb-3">
+                All four team members demonstrated exceptional commitment with near-perfect attendance throughout the season. The team prioritized consistency and collaboration.
+              </p>
+              <div className="space-y-2 text-sm">
+                <div>🎯 <strong>20 meetings attended</strong> (Sep-Feb)</div>
+                <div>📅 <strong>Weekly Sunday meetings</strong> for 2 hours</div>
+                <div>🤝 <strong>Collaborative approach</strong> with sister team 31200A</div>
+              </div>
+            </div>
+            <div className="p-6 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
+              <div className="label-mono text-xs mb-3" style={{ color: "#9B5DE5" }}>TEAM STRUCTURE</div>
+              <h4 className="font-semibold mb-3">Roles & Responsibilities</h4>
+              <p className="text-sm text-white/70 mb-3">
+                Clear role definition and cross-functional collaboration enabled efficient project execution and continuous improvement.
+              </p>
+              <div className="space-y-2 text-sm">
+                <div>🎮 <strong>Matthew Lin</strong> - Driver & Builder</div>
+                <div>💻 <strong>Ray Zhao</strong> - Driver & Programmer</div>
+                <div>🔧 <strong>Liam Qian</strong> - Builder</div>
+                <div>📖 <strong>Chen Li</strong> - Builder & Notebooker</div>
+              </div>
             </div>
           </div>
         </div>
