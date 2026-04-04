@@ -696,9 +696,161 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TESTING & TUNING ── */}
+      <section
+        ref={(el) => { sectionRefs.current[7] = el; }}
+        id="testing"
+        className="min-h-screen py-24"
+        style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
+      >
+        <div className="container max-w-6xl mx-auto px-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
+            <SectionTag color="#4CC9F0">CHAPTER 07</SectionTag>
+          </div>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Testing & Tuning</h2>
+          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
+            Iterative refinement through systematic testing, performance measurement, and rapid prototyping.
+          </p>
+
+          {/* First Drive Testing */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>OCT 12 — FIRST DRIVE TESTING</div>
+            <h3 className="text-2xl font-bold mb-6">Initial Performance Evaluation</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <div className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>First time team members drove the robot in a 30-second run. Tested movement, scoring capability, and driver performance to select drivers for future matches.</div>
+                <div className="space-y-3">
+                  <div className="flex gap-3">
+                    <span className="text-2xl">🎯</span>
+                    <div>
+                      <div className="font-semibold">Objective</div>
+                      <div className="text-sm text-white/60">Evaluate driver performance and robot responsiveness</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-2xl">📊</span>
+                    <div>
+                      <div className="font-semibold">Methodology</div>
+                      <div className="text-sm text-white/60">Each driver completed a 30-second run with scoring</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.2)" }}>
+                <div className="label-mono text-xs mb-3" style={{ color: "#4CC9F0" }}>DRIVER PERFORMANCE SCORES</div>
+                <div className="space-y-2">
+                  {[
+                    { name: "Matthew", score: 16, selected: true },
+                    { name: "Yusuf", score: 2, selected: false },
+                    { name: "Eesa", score: 2, selected: false },
+                    { name: "Chen", score: 2, selected: false },
+                  ].map((driver) => (
+                    <div key={driver.name} className="flex justify-between items-center pb-2" style={{ borderBottom: "1px solid rgba(76,201,240,0.1)" }}>
+                      <span className="text-sm">{driver.name}</span>
+                      <div className="flex gap-2 items-center">
+                        <span className="label-mono text-xs" style={{ color: driver.selected ? "#4CC9F0" : "rgba(255,255,255,0.4)" }}>{driver.score} pts</span>
+                        {driver.selected && <span style={{ color: "#4CC9F0" }}>✓</span>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tubing Optimization */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>OCT 19 — TUBING OPTIMIZATION</div>
+            <h3 className="text-2xl font-bold mb-6">Mechanical Refinement</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
+                <div className="text-lg font-bold mb-2" style={{ color: "#4CC9F0" }}>Problem</div>
+                <div className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Long tubes interfering with gears, causing jerky movement and inconsistent performance</div>
+              </div>
+              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
+                <div className="text-lg font-bold mb-2" style={{ color: "#4CC9F0" }}>Solution</div>
+                <div className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Trimmed excess length and rerouted tubes away from moving parts</div>
+              </div>
+              <div className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.3)", background: "rgba(76,201,240,0.1)" }}>
+                <div className="text-lg font-bold mb-2" style={{ color: "#4CC9F0" }}>Result</div>
+                <div className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Smooth operation, zero interference, improved reliability</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Grip & Strategy Upgrade */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>FEB 8 — GRIP & STRATEGY UPGRADE</div>
+            <h3 className="text-2xl font-bold mb-6">Pre-Competition Optimization</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div>
+                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>MECHANICAL IMPROVEMENT</div>
+                  <div className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.7)" }}>Added tension rubber bands to claw mechanism</div>
+                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Increased grip force and pin retention during transport</div>
+                </div>
+                <div>
+                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>STRATEGIC ADJUSTMENT</div>
+                  <div className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.7)" }}>Targeted Standoff Goal placement</div>
+                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Added 10 points per successful stack placement</div>
+                </div>
+              </div>
+              <div className="p-6 border" style={{ borderColor: "rgba(76,201,240,0.2)", background: "rgba(76,201,240,0.08)" }}>
+                <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>PERFORMANCE METRICS</div>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm font-semibold">Grip Success Rate</span>
+                      <span className="label-mono text-xs" style={{ color: "#4CC9F0" }}>+50%</span>
+                    </div>
+                    <div className="h-2 bg-white/10 relative overflow-hidden">
+                      <div className="h-full flex">
+                        <div className="w-1/2 bg-red-500/40" />
+                        <div className="w-1/2" style={{ background: "#4CC9F0" }} />
+                      </div>
+                    </div>
+                    <div className="flex justify-between mt-1 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                      <span>Before: 6/10</span>
+                      <span>After: 9/10</span>
+                    </div>
+                  </div>
+                  <div className="pt-3" style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}>
+                    <div className="text-sm font-semibold mb-1">Result</div>
+                    <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>Reliable pin transport enabled consistent scoring and Innovate Award recognition</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Testing Principles */}
+          <div className="p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>TESTING METHODOLOGY</div>
+            <h3 className="text-2xl font-bold mb-6">Continuous Improvement Framework</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { icon: "🔍", title: "Identify", desc: "Systematic observation of robot behavior during testing" },
+                { icon: "🔧", title: "Diagnose", desc: "Root cause analysis of performance issues" },
+                { icon: "⚙️", title: "Refine", desc: "Rapid prototyping and mechanical adjustments" },
+                { icon: "📈", title: "Measure", desc: "Quantify improvements with performance metrics" },
+              ].map((step) => (
+                <div key={step.title} className="flex gap-4">
+                  <div className="text-3xl">{step.icon}</div>
+                  <div>
+                    <div className="font-semibold mb-1">{step.title}</div>
+                    <div className="text-sm text-white/60">{step.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PROGRAMMING ── */}
       <section
-        ref={(el) => { sectionRefs.current[4] = el; }}
+        ref={(el) => { sectionRefs.current[7] = el; }}
         id="programming"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(6,214,160,0.2)" }}
@@ -788,7 +940,7 @@ export default function Home() {
 
       {/* ── COMPETITION ── */}
       <section
-        ref={(el) => { sectionRefs.current[5] = el; }}
+        ref={(el) => { sectionRefs.current[7] = el; }}
         id="competition"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(251,133,0,0.2)" }}
@@ -897,7 +1049,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
       {/* ── SEASON TIMELINE ── */}
       <section
-        ref={(el) => { sectionRefs.current[6] = el; }}
+        ref={(el) => { sectionRefs.current[7] = el; }}
         id="season"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
