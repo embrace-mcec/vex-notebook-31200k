@@ -696,9 +696,140 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── ROBOT SPECIFICATIONS ── */}
+      <section
+        ref={(el) => { sectionRefs.current[4] = el; }}
+        id="specifications"
+        className="min-h-screen py-24"
+        style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
+      >
+        <div className="container max-w-6xl mx-auto px-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
+            <SectionTag color="#4CC9F0">TECHNICAL REFERENCE</SectionTag>
+          </div>
+          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Robot Specifications</h2>
+          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
+            Complete technical documentation of the 180 Mech v1 robot design, including motors, sensors, and mechanical systems.
+          </p>
+
+          {/* Key Innovations */}
+          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>DESIGN HIGHLIGHTS</div>
+            <h3 className="text-2xl font-bold mb-6">Key Innovations</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Distance Sensor Automation",
+                  desc: "Reduces manual driver input and enables consistent arm positioning without button presses"
+                },
+                {
+                  title: "Pneumatic Claw Design",
+                  desc: "Reliable grip with adjustable tension via rubber bands for consistent pin transport"
+                },
+                {
+                  title: "Tank Drive Simplicity",
+                  desc: "Prioritizes reliability and driver confidence over complex maneuverability"
+                },
+                {
+                  title: "Tubing Optimization",
+                  desc: "Shortened and rerouted to prevent mechanical interference and ensure smooth operation"
+                },
+              ].map((innovation, idx) => (
+                <div key={idx} className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
+                  <div className="font-semibold mb-2" style={{ color: "#4CC9F0" }}>{innovation.title}</div>
+                  <div className="text-sm text-white/70">{innovation.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Technical Specifications Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {[
+              {
+                title: "Drivetrain System",
+                icon: "⚙️",
+                specs: [
+                  { label: "Type", value: "Tank Drive (2-motor)" },
+                  { label: "Motors", value: "2x VEX IQ Smart Motors" },
+                  { label: "Wheels", value: "4-wheel configuration" },
+                  { label: "Advantage", value: "Simple, reliable, straight movement" },
+                ]
+              },
+              {
+                title: "Claw & Clamp Mechanism",
+                icon: "🦾",
+                specs: [
+                  { label: "Type", value: "Pneumatic-actuated claw" },
+                  { label: "Actuators", value: "Pistons with rubber band tension" },
+                  { label: "Success Rate", value: "90% (9/10 transports)" },
+                  { label: "Improvement", value: "+50% from initial 60%" },
+                ]
+              },
+              {
+                title: "Arm & Lift System",
+                icon: "🔧",
+                specs: [
+                  { label: "Type", value: "180-degree rotating arm" },
+                  { label: "Motor", value: "1x VEX IQ Smart Motor" },
+                  { label: "Range", value: "Full 180-degree rotation" },
+                  { label: "Height Extended", value: "18+ inches" },
+                ]
+              },
+              {
+                title: "Sensor & Automation",
+                icon: "📡",
+                specs: [
+                  { label: "Primary Sensor", value: "Distance sensor" },
+                  { label: "Function", value: "Automated arm positioning" },
+                  { label: "Threshold", value: "20mm for arm lock" },
+                  { label: "Benefit", value: "Eliminates manual button presses" },
+                ]
+              },
+            ].map((section, idx) => (
+              <div key={idx} className="p-6 border" style={{ borderColor: "rgba(76,201,240,0.2)", background: "rgba(76,201,240,0.03)" }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">{section.icon}</span>
+                  <h4 className="font-semibold" style={{ color: "#4CC9F0" }}>{section.title}</h4>
+                </div>
+                <div className="space-y-3">
+                  {section.specs.map((spec, sidx) => (
+                    <div key={sidx} className="flex justify-between items-start gap-3 pb-2" style={{ borderBottom: "1px solid rgba(76,201,240,0.1)" }}>
+                      <span className="label-mono text-xs text-white/60">{spec.label}</span>
+                      <span className="text-sm text-right" style={{ color: "rgba(255,255,255,0.8)" }}>{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Performance Metrics */}
+          <div className="p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
+            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>VALIDATED PERFORMANCE</div>
+            <h3 className="text-2xl font-bold mb-6">Proven Results</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { metric: "Grip Success Rate", value: "90%", detail: "9/10 pin transports" },
+                { metric: "Average Match Score", value: "99.2 pts", detail: "Feb 8 qualifier" },
+                { metric: "VR Skills Score", value: "140 pts", detail: "Final season score" },
+              ].map((perf, idx) => (
+                <div key={idx} className="p-4 border text-center" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
+                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>{perf.metric}</div>
+                  <div className="text-3xl font-extrabold mb-1">{perf.value}</div>
+                  <div className="text-xs text-white/60">{perf.detail}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPETITION ── */}
       {/* ── TESTING & TUNING ── */}
       <section
-        ref={(el) => { sectionRefs.current[7] = el; }}
+        ref={(el) => { sectionRefs.current[5] = el; }}
         id="testing"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
@@ -850,7 +981,7 @@ export default function Home() {
 
       {/* ── PROGRAMMING ── */}
       <section
-        ref={(el) => { sectionRefs.current[5] = el; }}
+        ref={(el) => { sectionRefs.current[7] = el; }}
         id="programming"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(6,214,160,0.2)" }}
@@ -858,7 +989,7 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#06D6A0" }} />
-            <SectionTag color="#06D6A0">CHAPTER 04</SectionTag>
+            <SectionTag color="#06D6A0">CHAPTER 06</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#06D6A0" }}>Programming Journey</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -936,137 +1067,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ROBOT SPECIFICATIONS ── */}
-      <section
-        ref={(el) => { sectionRefs.current[5] = el; }}
-        id="specifications"
-        className="min-h-screen py-24"
-        style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
-      >
-        <div className="container max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">TECHNICAL REFERENCE</SectionTag>
-          </div>
-          <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Robot Specifications</h2>
-          <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
-            Complete technical documentation of the 180 Mech v1 robot design, including motors, sensors, and mechanical systems.
-          </p>
-
-          {/* Key Innovations */}
-          <div className="mb-12 p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>DESIGN HIGHLIGHTS</div>
-            <h3 className="text-2xl font-bold mb-6">Key Innovations</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Distance Sensor Automation",
-                  desc: "Reduces manual driver input and enables consistent arm positioning without button presses"
-                },
-                {
-                  title: "Pneumatic Claw Design",
-                  desc: "Reliable grip with adjustable tension via rubber bands for consistent pin transport"
-                },
-                {
-                  title: "Tank Drive Simplicity",
-                  desc: "Prioritizes reliability and driver confidence over complex maneuverability"
-                },
-                {
-                  title: "Tubing Optimization",
-                  desc: "Shortened and rerouted to prevent mechanical interference and ensure smooth operation"
-                },
-              ].map((innovation, idx) => (
-                <div key={idx} className="p-4 border" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
-                  <div className="font-semibold mb-2" style={{ color: "#4CC9F0" }}>{innovation.title}</div>
-                  <div className="text-sm text-white/70">{innovation.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Technical Specifications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {[
-              {
-                title: "Drivetrain System",
-                icon: "⚙️",
-                specs: [
-                  { label: "Type", value: "Tank Drive (2-motor)" },
-                  { label: "Motors", value: "2x VEX IQ Smart Motors" },
-                  { label: "Wheels", value: "4-wheel configuration" },
-                  { label: "Advantage", value: "Simple, reliable, straight movement" },
-                ]
-              },
-              {
-                title: "Claw & Clamp Mechanism",
-                icon: "🦾",
-                specs: [
-                  { label: "Type", value: "Pneumatic-actuated claw" },
-                  { label: "Actuators", value: "Pistons with rubber band tension" },
-                  { label: "Success Rate", value: "90% (9/10 transports)" },
-                  { label: "Improvement", value: "+50% from initial 60%" },
-                ]
-              },
-              {
-                title: "Arm & Lift System",
-                icon: "🔧",
-                specs: [
-                  { label: "Type", value: "180-degree rotating arm" },
-                  { label: "Motor", value: "1x VEX IQ Smart Motor" },
-                  { label: "Range", value: "Full 180-degree rotation" },
-                  { label: "Height Extended", value: "18+ inches" },
-                ]
-              },
-              {
-                title: "Sensor & Automation",
-                icon: "📡",
-                specs: [
-                  { label: "Primary Sensor", value: "Distance sensor" },
-                  { label: "Function", value: "Automated arm positioning" },
-                  { label: "Threshold", value: "20mm for arm lock" },
-                  { label: "Benefit", value: "Eliminates manual button presses" },
-                ]
-              },
-            ].map((section, idx) => (
-              <div key={idx} className="p-6 border" style={{ borderColor: "rgba(76,201,240,0.2)", background: "rgba(76,201,240,0.03)" }}>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">{section.icon}</span>
-                  <h4 className="font-semibold" style={{ color: "#4CC9F0" }}>{section.title}</h4>
-                </div>
-                <div className="space-y-3">
-                  {section.specs.map((spec, sidx) => (
-                    <div key={sidx} className="flex justify-between items-start gap-3 pb-2" style={{ borderBottom: "1px solid rgba(76,201,240,0.1)" }}>
-                      <span className="label-mono text-xs text-white/60">{spec.label}</span>
-                      <span className="text-sm text-right" style={{ color: "rgba(255,255,255,0.8)" }}>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Performance Metrics */}
-          <div className="p-8 border" style={{ borderColor: "rgba(76,201,240,0.25)", background: "rgba(76,201,240,0.05)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#4CC9F0" }}>VALIDATED PERFORMANCE</div>
-            <h3 className="text-2xl font-bold mb-6">Proven Results</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { metric: "Grip Success Rate", value: "90%", detail: "9/10 pin transports" },
-                { metric: "Average Match Score", value: "99.2 pts", detail: "Feb 8 qualifier" },
-                { metric: "VR Skills Score", value: "140 pts", detail: "Final season score" },
-              ].map((perf, idx) => (
-                <div key={idx} className="p-4 border text-center" style={{ borderColor: "rgba(76,201,240,0.15)" }}>
-                  <div className="label-mono text-xs mb-2" style={{ color: "#4CC9F0" }}>{perf.metric}</div>
-                  <div className="text-3xl font-extrabold mb-1">{perf.value}</div>
-                  <div className="text-xs text-white/60">{perf.detail}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── COMPETITION ── */}
       <section
         ref={(el) => { sectionRefs.current[6] = el; }}
         id="competition"
@@ -1177,7 +1177,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
       {/* ── SEASON TIMELINE ── */}
       <section
-        ref={(el) => { sectionRefs.current[7] = el; }}
+        ref={(el) => { sectionRefs.current[8] = el; }}
         id="season"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(76,201,240,0.2)" }}
@@ -1185,7 +1185,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
         <div className="container max-w-6xl mx-auto px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-4 h-4 border-2 rotate-45" style={{ borderColor: "#4CC9F0" }} />
-            <SectionTag color="#4CC9F0">CHAPTER 06</SectionTag>
+            <SectionTag color="#4CC9F0">CHAPTER 08</SectionTag>
           </div>
           <h2 className="text-5xl font-extrabold mb-3" style={{ color: "#4CC9F0" }}>Full Season Journey</h2>
           <p className="text-base mb-12" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 600 }}>
@@ -1249,7 +1249,7 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
 
       {/* ── TEAM MANAGER ── */}
       <section
-        ref={(el) => { sectionRefs.current[8] = el; }}
+        ref={(el) => { sectionRefs.current[9] = el; }}
         id="team-manager"
         className="min-h-screen py-24"
         style={{ borderTop: "1px solid rgba(155,93,229,0.2)" }}
