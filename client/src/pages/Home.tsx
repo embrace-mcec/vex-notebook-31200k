@@ -133,6 +133,104 @@ function NavDot({ label, active, color, onClick }: { label: string; active: bool
   );
 }
 
+function GanttChart() {
+  const ganttData = [
+    { phase: "Team Registration", start: new Date(2025, 5, 1), end: new Date(2025, 7, 31), color: "#FFB703", desc: "Official team registration and preparation" },
+    { phase: "Team Preparation", start: new Date(2025, 6, 1), end: new Date(2025, 8, 31), color: "#FF6B9D", desc: "Initial planning and resource gathering" },
+    { phase: "Research & Prototyping", start: new Date(2025, 8, 1), end: new Date(2025, 9, 31), color: "#9B5DE5", desc: "Design exploration and initial prototypes" },
+    { phase: "Team Meeting, Building & Programming", start: new Date(2025, 8, 1), end: new Date(2026, 1, 28), color: "#4CC9F0", desc: "Core development phase with weekly meetings" },
+    { phase: "Competition Season", start: new Date(2025, 10, 1), end: new Date(2026, 1, 28), color: "#FB8500", desc: "Four qualifier events across Ontario" },
+    { phase: "Provincial Championship", start: new Date(2026, 2, 7), end: new Date(2026, 2, 8), color: "#06D6A0", desc: "Qualification achieved - competing for provincial title" },
+    { phase: "World Championship", start: new Date(2026, 4, 1), end: new Date(2026, 4, 30), color: "#00C9B1", desc: "Target milestone - representing Ontario globally" },
+  ];
+
+  const minDate = new Date(2025, 5, 1);
+  const maxDate = new Date(2026, 4, 30);
+  const totalDays = Math.ceil((maxDate.getTime() - minDate.getTime()) / (1000 * 60 * 60 * 24));
+
+  const getPosition = (date: Date) => {
+    const days = Math.ceil((date.getTime() - minDate.getTime()) / (1000 * 60 * 60 * 24));
+    return (days / totalDays) * 100;
+  };
+
+  const getWidth = (start: Date, end: Date) => {
+    const days = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+    return (days / totalDays) * 100;
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+  };
+
+  return (
+    <div className="w-full">
+      {/* Timeline Header */}
+      <div className="mb-6 pb-4 border-b" style={{ borderColor: "rgba(155,93,229,0.2)" }}>
+        <div className="flex justify-between text-xs label-mono" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <span>{formatDate(minDate)}</span>
+          <span>Sep 2025</span>
+          <span>Dec 2025</span>
+          <span>Mar 2026</span>
+          <span>{formatDate(maxDate)}</span>
+        </div>
+      </div>
+
+      {/* Gantt Bars */}
+      <div className="space-y-4">
+        {ganttData.map((item, idx) => {
+          const leftPos = getPosition(item.start);
+          const width = getWidth(item.start, item.end);
+          return (
+            <div key={idx} className="relative h-16 group">
+              {/* Phase Label */}
+              <div className="absolute left-0 top-0 w-32 pr-2 text-xs font-semibold truncate" style={{ color: item.color }}>
+                {item.phase}
+              </div>
+              
+              {/* Gantt Bar */}
+              <div
+                className="absolute top-4 h-8 rounded-sm transition-all duration-300 hover:opacity-80 cursor-pointer"
+                style={{
+                  left: `calc(8rem + ${leftPos}%)`,
+                  width: `${width}%`,
+                  backgroundColor: item.color,
+                  opacity: 0.7,
+                  minWidth: '20px',
+                }}
+                title={`${item.phase}: ${formatDate(item.start)} - ${formatDate(item.end)}`}
+              />
+              
+              {/* Description */}
+              <div className="absolute left-0 top-12 text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
+                {item.desc}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Legend */}
+      <div className="mt-8 pt-4 border-t" style={{ borderColor: "rgba(155,93,229,0.2)" }}>
+        <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Legend:</div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
+          {[
+            { label: "Planning", color: "#FFB703" },
+            { label: "Development", color: "#4CC9F0" },
+            { label: "Competition", color: "#FB8500" },
+            { label: "Prototyping", color: "#9B5DE5" },
+            { label: "Championship", color: "#06D6A0" },
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: item.color, opacity: 0.7 }} />
+              <span className="text-xs">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SectionTag({ color, children }: { color: string; children: React.ReactNode }) {
   return (
     <span
@@ -1259,29 +1357,11 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
             Comprehensive team management, meeting logs, and season planning documentation.
           </p>
 
-          {/* Season Schedule */}
+          {/* Season Schedule - Gantt Chart */}
           <div className="mb-12 p-8 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
             <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>TEAM TIMELINE</div>
             <h3 className="text-2xl font-bold mb-6">Mix & Match Season Schedule 2025-2026</h3>
-            <div className="space-y-4">
-              {[
-                { phase: "Team Registration", timeline: "June - July 2025", desc: "Official team registration and preparation" },
-                { phase: "Team Preparation", timeline: "July - August 2025", desc: "Initial planning and resource gathering" },
-                { phase: "Team Meeting, Robotics Building & Programming", timeline: "September 2025 - February 2026", desc: "Core development phase with weekly meetings" },
-                { phase: "Research & Prototyping", timeline: "September - October 2025", desc: "Design exploration and initial prototypes" },
-                { phase: "Competition Season", timeline: "November 2025 - February 2026", desc: "Four qualifier events across Ontario" },
-                { phase: "Provincial Championship", timeline: "March 7-8, 2026", desc: "Qualification achieved - competing for provincial title" },
-                { phase: "World Championship", timeline: "May 2026", desc: "Target milestone - representing Ontario globally" },
-              ].map((item, idx) => (
-                <div key={idx} className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)", background: "rgba(155,93,229,0.03)" }}>
-                  <div className="flex justify-between items-start gap-4 mb-2">
-                    <div className="font-semibold" style={{ color: "#9B5DE5" }}>{item.phase}</div>
-                    <div className="label-mono text-xs text-white/60">{item.timeline}</div>
-                  </div>
-                  <p className="text-sm text-white/70">{item.desc}</p>
-                </div>
-              ))}
-            </div>
+            <GanttChart />
           </div>
 
           {/* Team Meeting Log */}
