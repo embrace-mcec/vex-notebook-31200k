@@ -133,6 +133,105 @@ function NavDot({ label, active, color, onClick }: { label: string; active: bool
   );
 }
 
+function CollapsibleMeetingLog() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const meetingData = [
+    { date: "2025-09-07", matthew: "✓", ray: "✓", chen: "-", liam: "✓", notes: "Kickoff meeting, vote for team name" },
+    { date: "2025-09-14", matthew: "✓", ray: "✓", chen: "◐", liam: "✓", notes: "Game strategy analysis, field setup" },
+    { date: "2025-09-21", matthew: "-", ray: "✓", chen: "✓", liam: "✓", notes: "Brainstorming, Prototyping; programming environment setup" },
+    { date: "2025-09-28", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train analysis and building; programming learning" },
+    { date: "2025-10-05", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train building, Claw & Clamp initial design; controller pairing" },
+    { date: "2025-10-12", matthew: "✓", ray: "✓", chen: "-", liam: "-", notes: "First drive testing" },
+    { date: "2025-10-19", matthew: "✓", ray: "✓", chen: "✓", liam: "-", notes: "Drive practicing" },
+    { date: "2025-10-26", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Competition rule learning, auto skills programming" },
+    { date: "2025-11-02", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "K team's competition (CautionTape)" },
+    { date: "2025-11-09", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection" },
+    { date: "2025-11-23", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive testing; VR skills training" },
+    { date: "2025-11-30", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "2nd field setup; VR skills" },
+    { date: "2025-12-07", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Building improvement; new Robot brainstorming (Revolver)" },
+    { date: "2025-12-14", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "new Robot building; VR skills" },
+    { date: "2026-01-11", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive practice, interview practice" },
+    { date: "2026-01-17", matthew: "-", ray: "-", chen: "-", liam: "-", notes: "Support A team's competition (Brampton)" },
+    { date: "2026-02-01", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Brampton competition reflection; new Robot building" },
+    { date: "2026-02-08", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Both A & K team's competition (CautionTape)" },
+    { date: "2026-02-15", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection, support K team drive practice" },
+    { date: "2026-02-22", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "drive practice, decision for new Robot" },
+  ];
+
+  return (
+    <div className="p-8 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
+      <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>TEAM COORDINATION</div>
+      
+      {/* Header with Toggle Button */}
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-2xl font-bold">Team Meeting Log</h3>
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="px-4 py-2 border rounded-sm transition-all duration-300 flex items-center gap-2"
+          style={{
+            borderColor: "#9B5DE5",
+            color: "#9B5DE5",
+            background: isExpanded ? "rgba(155,93,229,0.15)" : "transparent",
+          }}
+        >
+          <span className="label-mono text-xs font-semibold">{isExpanded ? "COLLAPSE" : "EXPAND"}</span>
+          <span className="text-lg" style={{ transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s" }}>▼</span>
+        </button>
+      </div>
+
+      {/* Summary when collapsed */}
+      {!isExpanded && (
+        <div className="p-4 border" style={{ borderColor: "rgba(155,93,229,0.15)", background: "rgba(155,93,229,0.03)" }}>
+          <p className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <strong>20 team meetings</strong> from September 2025 to February 2026. Teams 31200K and 31200A meet every <strong>Sunday for 2 hours</strong> to build, practice, and work as one big team.
+          </p>
+          <p className="text-xs mt-3" style={{ color: "rgba(255,255,255,0.5)" }}>Click "EXPAND" to view the complete meeting log with attendance records and detailed notes.</p>
+        </div>
+      )}
+
+      {/* Full table when expanded */}
+      {isExpanded && (
+        <div className="mt-6">
+          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
+            Teams 31200K and 31200A meet every <strong>Sunday for 2 hours</strong> to build, practice, and work as one big team. Below is a comprehensive log of all team meetings throughout the season.
+          </p>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
+              <thead>
+                <tr style={{ borderBottom: "2px solid rgba(155,93,229,0.3)" }}>
+                  <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Date</th>
+                  <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Matthew</th>
+                  <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Ray</th>
+                  <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Chen</th>
+                  <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Liam</th>
+                  <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Meeting Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {meetingData.map((row, idx) => (
+                  <tr key={idx} style={{ borderBottom: "1px solid rgba(155,93,229,0.1)" }}>
+                    <td className="p-3 label-mono text-xs" style={{ color: "#9B5DE5" }}>{row.date}</td>
+                    <td className="p-3 text-center">{row.matthew}</td>
+                    <td className="p-3 text-center">{row.ray}</td>
+                    <td className="p-3 text-center">{row.chen}</td>
+                    <td className="p-3 text-center">{row.liam}</td>
+                    <td className="p-3 text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>{row.notes}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p><strong>Legend:</strong> ✓ = Present | ◐ = Partial | - = Absent</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function GanttChart() {
   const ganttData = [
     { phase: "Team Registration", start: new Date(2025, 5, 1), end: new Date(2025, 7, 31), color: "#FFB703", desc: "Official team registration and preparation" },
@@ -1364,65 +1463,8 @@ FEB 8, 2026 — CAUTION TAPE LUNAR NEW YEAR QUALIFIER</div>
             <GanttChart />
           </div>
 
-          {/* Team Meeting Log */}
-          <div className="p-8 border" style={{ borderColor: "rgba(155,93,229,0.2)", background: "rgba(155,93,229,0.04)" }}>
-            <div className="label-mono text-xs mb-4" style={{ color: "#9B5DE5" }}>TEAM COORDINATION</div>
-            <h3 className="text-2xl font-bold mb-6">Team Meeting Log</h3>
-            <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
-              Teams 31200K and 31200A meet every <strong>Sunday for 2 hours</strong> to build, practice, and work as one big team. Below is a comprehensive log of all team meetings throughout the season.
-            </p>
-            
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ borderBottom: "2px solid rgba(155,93,229,0.3)" }}>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Date</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Matthew</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Ray</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Chen</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Liam</th>
-                    <th className="text-left p-3" style={{ color: "#9B5DE5" }}>Meeting Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { date: "2025-09-07", matthew: "✓", ray: "✓", chen: "-", liam: "✓", notes: "Kickoff meeting, vote for team name" },
-                    { date: "2025-09-14", matthew: "✓", ray: "✓", chen: "◐", liam: "✓", notes: "Game strategy analysis, field setup" },
-                    { date: "2025-09-21", matthew: "-", ray: "✓", chen: "✓", liam: "✓", notes: "Brainstorming, Prototyping; programming environment setup" },
-                    { date: "2025-09-28", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train analysis and building; programming learning" },
-                    { date: "2025-10-05", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive train building, Claw & Clamp initial design; controller pairing" },
-                    { date: "2025-10-12", matthew: "✓", ray: "✓", chen: "-", liam: "-", notes: "First drive testing" },
-                    { date: "2025-10-19", matthew: "✓", ray: "✓", chen: "✓", liam: "-", notes: "Drive practicing" },
-                    { date: "2025-10-26", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Competition rule learning, auto skills programming" },
-                    { date: "2025-11-02", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "K team's competition (CautionTape)" },
-                    { date: "2025-11-09", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection" },
-                    { date: "2025-11-23", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive testing; VR skills training" },
-                    { date: "2025-11-30", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "2nd field setup; VR skills" },
-                    { date: "2025-12-07", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Building improvement; new Robot brainstorming (Revolver)" },
-                    { date: "2025-12-14", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "new Robot building; VR skills" },
-                    { date: "2026-01-11", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Drive practice, interview practice" },
-                    { date: "2026-01-17", matthew: "-", ray: "-", chen: "-", liam: "-", notes: "Support A team's competition (Brampton)" },
-                    { date: "2026-02-01", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Brampton competition reflection; new Robot building" },
-                    { date: "2026-02-08", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "Both A & K team's competition (CautionTape)" },
-                    { date: "2026-02-15", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "CautionTape competition reflection, support K team drive practice" },
-                    { date: "2026-02-22", matthew: "✓", ray: "✓", chen: "✓", liam: "✓", notes: "drive practice, decision for new Robot" },
-                  ].map((row, idx) => (
-                    <tr key={idx} style={{ borderBottom: "1px solid rgba(155,93,229,0.1)" }}>
-                      <td className="p-3 label-mono text-xs" style={{ color: "#9B5DE5" }}>{row.date}</td>
-                      <td className="p-3 text-center">{row.matthew}</td>
-                      <td className="p-3 text-center">{row.ray}</td>
-                      <td className="p-3 text-center">{row.chen}</td>
-                      <td className="p-3 text-center">{row.liam}</td>
-                      <td className="p-3 text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>{row.notes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-              <p><strong>Legend:</strong> ✓ = Present | ◐ = Partial | - = Absent</p>
-            </div>
-          </div>
+          {/* Team Meeting Log - Collapsible */}
+          <CollapsibleMeetingLog />
 
           {/* Team Insights */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
