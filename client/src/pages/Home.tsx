@@ -178,7 +178,7 @@ export default function Home() {
         let maxRatio = 0;
         let activeIdx = -1;
         entries.forEach((entry) => {
-          if (entry.intersectionRatio >= 0.25 && entry.intersectionRatio > maxRatio) {
+          if (entry.intersectionRatio > maxRatio) {
             maxRatio = entry.intersectionRatio;
             const idx = sectionRefs.current.findIndex((r) => r === entry.target);
             if (idx !== -1) activeIdx = idx;
