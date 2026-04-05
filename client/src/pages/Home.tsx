@@ -234,13 +234,13 @@ function CollapsibleMeetingLog() {
 
 function GanttChart() {
   const ganttData = [
-    { phase: "Team Registration", start: new Date(2025, 5, 1), end: new Date(2025, 7, 31), color: "#FFB703", desc: "Official team registration and preparation" },
-    { phase: "Team Preparation", start: new Date(2025, 6, 1), end: new Date(2025, 8, 31), color: "#FF6B9D", desc: "Initial planning and resource gathering" },
-    { phase: "Research & Prototyping", start: new Date(2025, 8, 1), end: new Date(2025, 9, 31), color: "#9B5DE5", desc: "Design exploration and initial prototypes" },
-    { phase: "Team Meeting, Building & Programming", start: new Date(2025, 8, 1), end: new Date(2026, 1, 28), color: "#4CC9F0", desc: "Core development phase with weekly meetings" },
-    { phase: "Competition Season", start: new Date(2025, 10, 1), end: new Date(2026, 1, 28), color: "#FB8500", desc: "Four qualifier events across Ontario" },
-    { phase: "Provincial Championship", start: new Date(2026, 2, 7), end: new Date(2026, 2, 8), color: "#06D6A0", desc: "Qualification achieved - competing for provincial title" },
-    { phase: "World Championship", start: new Date(2026, 4, 1), end: new Date(2026, 4, 30), color: "#00C9B1", desc: "Target milestone - representing Ontario globally" },
+    { phase: "Registration", start: new Date(2025, 5, 1), end: new Date(2025, 7, 31), color: "#FFB703", desc: "Team registration" },
+    { phase: "Preparation", start: new Date(2025, 6, 1), end: new Date(2025, 8, 31), color: "#FF6B9D", desc: "Planning & resources" },
+    { phase: "Prototyping", start: new Date(2025, 8, 1), end: new Date(2025, 9, 31), color: "#9B5DE5", desc: "Design & prototypes" },
+    { phase: "Building & Prog", start: new Date(2025, 8, 1), end: new Date(2026, 1, 28), color: "#4CC9F0", desc: "Core development" },
+    { phase: "Competition", start: new Date(2025, 10, 1), end: new Date(2026, 1, 28), color: "#FB8500", desc: "Qualifier events" },
+    { phase: "Provincial", start: new Date(2026, 2, 7), end: new Date(2026, 2, 8), color: "#06D6A0", desc: "Provincial title" },
+    { phase: "World", start: new Date(2026, 4, 1), end: new Date(2026, 4, 30), color: "#00C9B1", desc: "World Championship" },
   ];
 
   const minDate = new Date(2025, 5, 1);
@@ -265,43 +265,50 @@ function GanttChart() {
     <div className="w-full">
       {/* Timeline Header */}
       <div className="mb-6 pb-4 border-b" style={{ borderColor: "rgba(155,93,229,0.2)" }}>
-        <div className="flex justify-between text-xs label-mono" style={{ color: "rgba(255,255,255,0.5)" }}>
-          <span>{formatDate(minDate)}</span>
-          <span>Sep 2025</span>
-          <span>Dec 2025</span>
-          <span>Mar 2026</span>
-          <span>{formatDate(maxDate)}</span>
+        <div className="flex" style={{ marginLeft: "144px" }}>
+          <div className="flex-1 flex justify-between text-xs label-mono" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <span>{formatDate(minDate)}</span>
+            <span>Sep 2025</span>
+            <span>Dec 2025</span>
+            <span>Mar 2026</span>
+            <span>{formatDate(maxDate)}</span>
+          </div>
         </div>
       </div>
 
       {/* Gantt Bars */}
-      <div className="space-y-4">
+      <div className="space-y-2">
         {ganttData.map((item, idx) => {
           const leftPos = getPosition(item.start);
           const width = getWidth(item.start, item.end);
           return (
-            <div key={idx} className="relative h-16 group">
-              {/* Phase Label */}
-              <div className="absolute left-0 top-0 w-32 pr-2 text-xs font-semibold truncate" style={{ color: item.color }}>
+            <div key={idx} className="flex items-center" style={{ minHeight: "36px" }}>
+              {/* Phase Label - Fixed Width */}
+              <div className="w-36 pr-3 text-xs font-semibold truncate" style={{ color: item.color, flexShrink: 0 }}>
                 {item.phase}
               </div>
               
-              {/* Gantt Bar */}
-              <div
-                className="absolute top-4 h-8 rounded-sm transition-all duration-300 hover:opacity-80 cursor-pointer"
-                style={{
-                  left: `calc(8rem + ${leftPos}%)`,
-                  width: `${width}%`,
-                  backgroundColor: item.color,
-                  opacity: 0.7,
-                  minWidth: '20px',
-                }}
-                title={`${item.phase}: ${formatDate(item.start)} - ${formatDate(item.end)}`}
-              />
-              
-              {/* Description */}
-              <div className="absolute left-0 top-12 text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
-                {item.desc}
+              {/* Gantt Bar Container */}
+              <div className="flex-1 relative" style={{ height: "36px" }}>
+                {/* Gantt Bar with Description Inside */}
+                <div
+                  className="absolute h-full rounded-sm transition-all duration-300 hover:opacity-85 cursor-pointer flex items-center px-2"
+                  style={{
+                    left: `${leftPos}%`,
+                    width: `${width}%`,
+                    backgroundColor: item.color,
+                    opacity: 0.75,
+                    minWidth: '30px',
+                  }}
+                  title={`${item.phase}: ${formatDate(item.start)} - ${formatDate(item.end)}`}
+                >
+                  {/* Description inside bar */}
+                  {width > 10 && (
+                    <span className="text-xs font-medium truncate" style={{ color: "rgba(255,255,255,0.95)" }}>
+                      {item.desc}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           );
