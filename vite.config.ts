@@ -74,7 +74,7 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
  * - Files: browserConsole.log, networkRequests.log, sessionReplay.log
  * - Auto-trimmed when exceeding 1MB (keeps newest entries)
  */
-/**
+
 function vitePluginManusDebugCollector(): Plugin {
   return {
     name: "manus-debug-collector",
@@ -97,7 +97,7 @@ function vitePluginManusDebugCollector(): Plugin {
         ],
       };
     },
-    */
+    
 
     configureServer(server: ViteDevServer) {
       // POST /__manus__/logs: Browser sends logs (written directly to files)
